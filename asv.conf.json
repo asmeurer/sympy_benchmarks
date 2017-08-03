@@ -11,7 +11,7 @@
 
     // The URL or local path of the source code repository for the
     // project being benchmarked
-    "repo": "https://github.com/sympy/sympy.git",
+    "repo": "/Users/aaronmeurer/Documents/Python/sympy/sympy",
 
     // List of branches to benchmark. If not provided, defaults to "master"
     // (for git) or "tip" (for mercurial).

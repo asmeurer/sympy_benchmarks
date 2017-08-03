@@ -1,0 +1,332 @@
+{
+    "commit_hash": "fc5461f962cb918df66db45b10596e818d3eff9a",
+    "date": 1501695995000,
+    "ended_at": {
+        "cse.TimeCSE.time_cse": 1501698048000,
+        "dsolve.TimeDsolve01.time_dsolve": 1501698052000,
+        "integrate.TimeIntegration01.time_doit": 1501698054000,
+        "integrate.TimeIntegration01.time_doit_meijerg": 1501698057000,
+        "lambdify.TimeLambdifyCreation.time_lambdify_create": 1501698062000,
+        "lambdify.TimeLambdifyEvaluate.time_lambdify_evaluate": 1501698069000,
+        "large_exprs.TimeLargeExpressionOperations.peakmem_jacobian_wrt_functions": 1501698072000,
+        "large_exprs.TimeLargeExpressionOperations.peakmem_jacobian_wrt_symbols": 1501698076000,
+        "large_exprs.TimeLargeExpressionOperations.peakmem_subs": 1501698079000,
+        "large_exprs.TimeLargeExpressionOperations.time_count_ops": 1501698085000,
+        "large_exprs.TimeLargeExpressionOperations.time_cse": 1501698105000,
+        "large_exprs.TimeLargeExpressionOperations.time_free_symbols": 1501698113000,
+        "large_exprs.TimeLargeExpressionOperations.time_jacobian_wrt_functions": 1501698119000,
+        "large_exprs.TimeLargeExpressionOperations.time_jacobian_wrt_symbols": 1501698123000,
+        "large_exprs.TimeLargeExpressionOperations.time_manual_jacobian_wrt_functions": 1501698128000,
+        "large_exprs.TimeLargeExpressionOperations.time_subs": 1501698133000,
+        "logic.LogicSuite.time_dpll": 1501698154000,
+        "logic.LogicSuite.time_dpll2": 1501698162000,
+        "logic.LogicSuite.time_load_file": 1501698169000,
+        "physics.mechanics.kane.KanesMethodMassSpringDamper.time_kanesmethod_mass_spring_damper": 1501698172000,
+        "physics.mechanics.lagrange.LagrangesMethodMassSpringDamper.time_lagrangesmethod_mass_spring_damper": 1501698174000,
+        "solve.TimeMatrixArithmetic.time_dense_add": 1501698192000,
+        "solve.TimeMatrixArithmetic.time_dense_multiply": 1501698217000,
+        "solve.TimeMatrixOperations.time_det": 1501698236000,
+        "solve.TimeMatrixOperations.time_det_bareiss": 1501698254000,
+        "solve.TimeMatrixOperations.time_det_berkowitz": 1501698268000,
+        "solve.TimeMatrixOperations.time_rank": 1501698274000,
+        "solve.TimeMatrixOperations.time_rref": 1501698285000,
+        "solve.TimeMatrixSolve.time_solve": 1501698294000,
+        "solve.TimeMatrixSolve2.time_cholesky_solve": 1501698295000,
+        "solve.TimeMatrixSolve2.time_lusolve": 1501698296000,
+        "solve.TimeSolve01.time_solve": 1501698300000,
+        "solve.TimeSolve01.time_solve_nocheck": 1501698304000,
+        "sum.TimeSum.time_doit": 1501698310000
+    },
+    "env_name": "virtualenv-py3.5-fastcache-mpmath-numpy",
+    "params": {
+        "arch": "x86_64",
+        "cpu": "Intel(R) Core(TM) i7-3615QM CPU @ 2.30GHz",
+        "fastcache": "",
+        "machine": "Aarons-MacBook-Pro.local",
+        "mpmath": "",
+        "numpy": "",
+        "os": "Darwin 15.6.0",
+        "python": "3.5",
+        "ram": "8589934592"
+    },
+    "profiles": {},
+    "python": "3.5",
+    "requirements": {
+        "fastcache": "",
+        "mpmath": "",
+        "numpy": ""
+    },
+    "results": {
+        "cse.TimeCSE.time_cse": {
+            "params": [
+                [
+                    "(2, 8)",
+                    "(3, 8)",
+                    "(4, 8)",
+                    "(2, 9)",
+                    "(2, 10)",
+                    "(2, 11)"
+                ]
+            ],
+            "result": [
+                0.002727440000000001,
+                0.0029890899999999985,
+                0.0038080600000000007,
+                0.0033796199999999985,
+                0.0035638499999999995,
+                0.004144020000000002
+            ]
+        },
+        "dsolve.TimeDsolve01.time_dsolve": 0.6562799999999998,
+        "integrate.TimeIntegration01.time_doit": 0.19395400000000018,
+        "integrate.TimeIntegration01.time_doit_meijerg": 0.10906600000000033,
+        "lambdify.TimeLambdifyCreation.time_lambdify_create": {
+            "params": [
+                [
+                    "['math']",
+                    "['numpy']"
+                ]
+            ],
+            "result": [
+                0.0786085,
+                0.07685800000000009
+            ]
+        },
+        "lambdify.TimeLambdifyEvaluate.time_lambdify_evaluate": {
+            "params": [
+                [
+                    "['math']",
+                    "['numpy']"
+                ]
+            ],
+            "result": [
+                1.519889e-05,
+                0.00025494499999999997
+            ]
+        },
+        "large_exprs.TimeLargeExpressionOperations.peakmem_jacobian_wrt_functions": 44953600,
+        "large_exprs.TimeLargeExpressionOperations.peakmem_jacobian_wrt_symbols": 44777472,
+        "large_exprs.TimeLargeExpressionOperations.peakmem_subs": 44875776,
+        "large_exprs.TimeLargeExpressionOperations.time_count_ops": 0.05870479999999993,
+        "large_exprs.TimeLargeExpressionOperations.time_cse": 17.370803000000002,
+        "large_exprs.TimeLargeExpressionOperations.time_free_symbols": 0.012711000000000005,
+        "large_exprs.TimeLargeExpressionOperations.time_jacobian_wrt_functions": 0.20614500000000024,
+        "large_exprs.TimeLargeExpressionOperations.time_jacobian_wrt_symbols": 0.022600000000000176,
+        "large_exprs.TimeLargeExpressionOperations.time_manual_jacobian_wrt_functions": 0.1936769999999992,
+        "large_exprs.TimeLargeExpressionOperations.time_subs": 0.5715030000000003,
+        "logic.LogicSuite.time_dpll": 5.275753999999997,
+        "logic.LogicSuite.time_dpll2": 0.67563,
+        "logic.LogicSuite.time_load_file": 0.006855360000000008,
+        "physics.mechanics.kane.KanesMethodMassSpringDamper.time_kanesmethod_mass_spring_damper": 0.004541009999999999,
+        "physics.mechanics.lagrange.LagrangesMethodMassSpringDamper.time_lagrangesmethod_mass_spring_damper": 0.0020567400000000013,
+        "solve.TimeMatrixArithmetic.time_dense_add": {
+            "params": [
+                [
+                    "3",
+                    "4",
+                    "6",
+                    "10"
+                ],
+                [
+                    "0",
+                    "5"
+                ]
+            ],
+            "result": [
+                3.1112099999999996e-05,
+                3.595010000000001e-05,
+                4.6148899999999994e-05,
+                5.230310000000001e-05,
+                9.038070000000002e-05,
+                0.00010343230000000002,
+                0.0002258849999999999,
+                0.00022918999999999988
+            ]
+        },
+        "solve.TimeMatrixArithmetic.time_dense_multiply": {
+            "params": [
+                [
+                    "3",
+                    "4",
+                    "6",
+                    "10"
+                ],
+                [
+                    "0",
+                    "5"
+                ]
+            ],
+            "result": [
+                0.00013568910000000002,
+                0.00019502069999999995,
+                0.00028248600000000003,
+                0.00039015699999999986,
+                0.0008191659999999999,
+                0.0010756829999999998,
+                0.003302419999999999,
+                0.004120140000000003
+            ]
+        },
+        "solve.TimeMatrixOperations.time_det": {
+            "params": [
+                [
+                    "3",
+                    "4"
+                ],
+                [
+                    "0",
+                    "2",
+                    "5"
+                ]
+            ],
+            "result": [
+                0.0001924271,
+                0.0002672379999999999,
+                0.00025789899999999996,
+                0.0010790090000000003,
+                0.062101,
+                0.04267240000000002
+            ]
+        },
+        "solve.TimeMatrixOperations.time_det_bareiss": {
+            "params": [
+                [
+                    "3",
+                    "4"
+                ],
+                [
+                    "0",
+                    "2",
+                    "5"
+                ]
+            ],
+            "result": [
+                0.0001958995999999999,
+                0.00020918599999999999,
+                0.00023131500000000006,
+                0.00115164,
+                0.06224699999999994,
+                0.04594990000000001
+            ]
+        },
+        "solve.TimeMatrixOperations.time_det_berkowitz": {
+            "params": [
+                [
+                    "3",
+                    "4"
+                ],
+                [
+                    "0",
+                    "2",
+                    "5"
+                ]
+            ],
+            "result": [
+                0.00018962899999999994,
+                0.00021333599999999998,
+                0.0002582629999999999,
+                0.0019240899999999994,
+                0.0020353599999999995,
+                0.0020082320000000004
+            ]
+        },
+        "solve.TimeMatrixOperations.time_rank": {
+            "params": [
+                [
+                    "3",
+                    "4"
+                ],
+                [
+                    "0",
+                    "2",
+                    "5"
+                ]
+            ],
+            "result": [
+                0.0005319999999999769,
+                0.10545899999999997,
+                0.050508999999999915,
+                0.0009059999999999624,
+                0.11512699999999987,
+                0.13754199999999994
+            ]
+        },
+        "solve.TimeMatrixOperations.time_rref": {
+            "params": [
+                [
+                    "3",
+                    "4"
+                ],
+                [
+                    "0",
+                    "2",
+                    "5"
+                ]
+            ],
+            "result": [
+                0.0002746159999999999,
+                0.06180029999999999,
+                0.12325999999999993,
+                0.000542014,
+                0.16174299999999997,
+                0.21006000000000014
+            ]
+        },
+        "solve.TimeMatrixSolve.time_solve": {
+            "params": [
+                [
+                    "'GE'",
+                    "'LU'",
+                    "'ADJ'"
+                ]
+            ],
+            "result": [
+                0.8865649999999996,
+                0.8680029999999999,
+                0.3937090000000001
+            ]
+        },
+        "solve.TimeMatrixSolve2.time_cholesky_solve": 0.0018433599999999983,
+        "solve.TimeMatrixSolve2.time_lusolve": 0.0008219999999999894,
+        "solve.TimeSolve01.time_solve": 0.9993320000000001,
+        "solve.TimeSolve01.time_solve_nocheck": 1.0712179999999996,
+        "sum.TimeSum.time_doit": 0.029034899999999995
+    },
+    "started_at": {
+        "cse.TimeCSE.time_cse": 1501698037000,
+        "dsolve.TimeDsolve01.time_dsolve": 1501698048000,
+        "integrate.TimeIntegration01.time_doit": 1501698052000,
+        "integrate.TimeIntegration01.time_doit_meijerg": 1501698054000,
+        "lambdify.TimeLambdifyCreation.time_lambdify_create": 1501698057000,
+        "lambdify.TimeLambdifyEvaluate.time_lambdify_evaluate": 1501698062000,
+        "large_exprs.TimeLargeExpressionOperations.peakmem_jacobian_wrt_functions": 1501698069000,
+        "large_exprs.TimeLargeExpressionOperations.peakmem_jacobian_wrt_symbols": 1501698072000,
+        "large_exprs.TimeLargeExpressionOperations.peakmem_subs": 1501698076000,
+        "large_exprs.TimeLargeExpressionOperations.time_count_ops": 1501698079000,
+        "large_exprs.TimeLargeExpressionOperations.time_cse": 1501698085000,
+        "large_exprs.TimeLargeExpressionOperations.time_free_symbols": 1501698105000,
+        "large_exprs.TimeLargeExpressionOperations.time_jacobian_wrt_functions": 1501698113000,
+        "large_exprs.TimeLargeExpressionOperations.time_jacobian_wrt_symbols": 1501698119000,
+        "large_exprs.TimeLargeExpressionOperations.time_manual_jacobian_wrt_functions": 1501698123000,
+        "large_exprs.TimeLargeExpressionOperations.time_subs": 1501698128000,
+        "logic.LogicSuite.time_dpll": 1501698133000,
+        "logic.LogicSuite.time_dpll2": 1501698154000,
+        "logic.LogicSuite.time_load_file": 1501698162000,
+        "physics.mechanics.kane.KanesMethodMassSpringDamper.time_kanesmethod_mass_spring_damper": 1501698169000,
+        "physics.mechanics.lagrange.LagrangesMethodMassSpringDamper.time_lagrangesmethod_mass_spring_damper": 1501698172000,
+        "solve.TimeMatrixArithmetic.time_dense_add": 1501698174000,
+        "solve.TimeMatrixArithmetic.time_dense_multiply": 1501698192000,
+        "solve.TimeMatrixOperations.time_det": 1501698217000,
+        "solve.TimeMatrixOperations.time_det_bareiss": 1501698236000,
+        "solve.TimeMatrixOperations.time_det_berkowitz": 1501698254000,
+        "solve.TimeMatrixOperations.time_rank": 1501698268000,
+        "solve.TimeMatrixOperations.time_rref": 1501698274000,
+        "solve.TimeMatrixSolve.time_solve": 1501698285000,
+        "solve.TimeMatrixSolve2.time_cholesky_solve": 1501698294000,
+        "solve.TimeMatrixSolve2.time_lusolve": 1501698295000,
+        "solve.TimeSolve01.time_solve": 1501698296000,
+        "solve.TimeSolve01.time_solve_nocheck": 1501698300000,
+        "sum.TimeSum.time_doit": 1501698304000
+    },
+    "version": 1
+}

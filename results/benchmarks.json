@@ -1,0 +1,562 @@
+{
+    "cse.TimeCSE.time_cse": {
+        "code": "def time_cse(self, nexprs_nterms):\n    sp.cse(self.exprs)\n",
+        "goal_time": 2.0,
+        "name": "cse.TimeCSE.time_cse",
+        "number": 0,
+        "param_names": [
+            "param1"
+        ],
+        "params": [
+            [
+                "(2, 8)",
+                "(3, 8)",
+                "(4, 8)",
+                "(2, 9)",
+                "(2, 10)",
+                "(2, 11)"
+            ]
+        ],
+        "pretty_name": "cse.TimeCSE.time_cse",
+        "repeat": 0,
+        "timeout": 60.0,
+        "type": "time",
+        "unit": "seconds"
+    },
+    "dsolve.TimeDsolve01.time_dsolve": {
+        "code": "def time_dsolve(self):\n    t, y, y0, k = self.params\n    dsolve(self.ode, y[1](t))\n",
+        "goal_time": 2.0,
+        "name": "dsolve.TimeDsolve01.time_dsolve",
+        "number": 0,
+        "param_names": [],
+        "params": [],
+        "pretty_name": "dsolve.TimeDsolve01.time_dsolve",
+        "repeat": 0,
+        "timeout": 60.0,
+        "type": "time",
+        "unit": "seconds"
+    },
+    "integrate.TimeIntegration01.time_doit": {
+        "code": "def time_doit(self):\n    self.values['time_doit'] = self.integral.doit()\n",
+        "goal_time": 2.0,
+        "name": "integrate.TimeIntegration01.time_doit",
+        "number": 0,
+        "param_names": [],
+        "params": [],
+        "pretty_name": "integrate.TimeIntegration01.time_doit",
+        "repeat": 0,
+        "timeout": 60.0,
+        "type": "time",
+        "unit": "seconds"
+    },
+    "integrate.TimeIntegration01.time_doit_meijerg": {
+        "code": "def time_doit_meijerg(self):\n    self.values['time_doit_meijerg'] = self.integral.doit(meijerg=True)\n",
+        "goal_time": 2.0,
+        "name": "integrate.TimeIntegration01.time_doit_meijerg",
+        "number": 0,
+        "param_names": [],
+        "params": [],
+        "pretty_name": "integrate.TimeIntegration01.time_doit_meijerg",
+        "repeat": 0,
+        "timeout": 60.0,
+        "type": "time",
+        "unit": "seconds"
+    },
+    "lambdify.TimeLambdifyCreation.time_lambdify_create": {
+        "code": "def time_lambdify_create(self, modules):\n    sp.lambdify(self.args, self.exprs, modules=modules)\n",
+        "goal_time": 2.0,
+        "name": "lambdify.TimeLambdifyCreation.time_lambdify_create",
+        "number": 0,
+        "param_names": [
+            "param1"
+        ],
+        "params": [
+            [
+                "['math']",
+                "['numpy']"
+            ]
+        ],
+        "pretty_name": "lambdify.TimeLambdifyCreation.time_lambdify_create",
+        "repeat": 0,
+        "timeout": 60.0,
+        "type": "time",
+        "unit": "seconds"
+    },
+    "lambdify.TimeLambdifyEvaluate.time_lambdify_evaluate": {
+        "code": "def time_lambdify_evaluate(self, modules):\n    self.lmb(*self.inp)\n",
+        "goal_time": 2.0,
+        "name": "lambdify.TimeLambdifyEvaluate.time_lambdify_evaluate",
+        "number": 0,
+        "param_names": [
+            "param1"
+        ],
+        "params": [
+            [
+                "['math']",
+                "['numpy']"
+            ]
+        ],
+        "pretty_name": "lambdify.TimeLambdifyEvaluate.time_lambdify_evaluate",
+        "repeat": 0,
+        "timeout": 60.0,
+        "type": "time",
+        "unit": "seconds"
+    },
+    "large_exprs.TimeLargeExpressionOperations.peakmem_jacobian_wrt_functions": {
+        "code": "def peakmem_jacobian_wrt_functions(self):\n\n    self.func_matrix.jacobian(self.funcs)\n",
+        "name": "large_exprs.TimeLargeExpressionOperations.peakmem_jacobian_wrt_functions",
+        "param_names": [],
+        "params": [],
+        "pretty_name": "large_exprs.TimeLargeExpressionOperations.peakmem_jacobian_wrt_functions",
+        "timeout": 60.0,
+        "type": "peakmemory",
+        "unit": "bytes"
+    },
+    "large_exprs.TimeLargeExpressionOperations.peakmem_jacobian_wrt_symbols": {
+        "code": "def peakmem_jacobian_wrt_symbols(self):\n\n    self.sym_matrix.jacobian(self.syms)\n",
+        "name": "large_exprs.TimeLargeExpressionOperations.peakmem_jacobian_wrt_symbols",
+        "param_names": [],
+        "params": [],
+        "pretty_name": "large_exprs.TimeLargeExpressionOperations.peakmem_jacobian_wrt_symbols",
+        "timeout": 60.0,
+        "type": "peakmemory",
+        "unit": "bytes"
+    },
+    "large_exprs.TimeLargeExpressionOperations.peakmem_subs": {
+        "code": "def peakmem_subs(self):\n\n    self.func_matrix.subs(self.subs)\n",
+        "name": "large_exprs.TimeLargeExpressionOperations.peakmem_subs",
+        "param_names": [],
+        "params": [],
+        "pretty_name": "large_exprs.TimeLargeExpressionOperations.peakmem_subs",
+        "timeout": 60.0,
+        "type": "peakmemory",
+        "unit": "bytes"
+    },
+    "large_exprs.TimeLargeExpressionOperations.time_count_ops": {
+        "code": "def time_count_ops(self):\n\n    self.super_long_expr.count_ops()\n",
+        "goal_time": 2.0,
+        "name": "large_exprs.TimeLargeExpressionOperations.time_count_ops",
+        "number": 0,
+        "param_names": [],
+        "params": [],
+        "pretty_name": "large_exprs.TimeLargeExpressionOperations.time_count_ops",
+        "repeat": 0,
+        "timeout": 60.0,
+        "type": "time",
+        "unit": "seconds"
+    },
+    "large_exprs.TimeLargeExpressionOperations.time_cse": {
+        "code": "def time_cse(self):\n\n    sm.cse(self.long_expr)\n",
+        "goal_time": 2.0,
+        "name": "large_exprs.TimeLargeExpressionOperations.time_cse",
+        "number": 0,
+        "param_names": [],
+        "params": [],
+        "pretty_name": "large_exprs.TimeLargeExpressionOperations.time_cse",
+        "repeat": 0,
+        "timeout": 60.0,
+        "type": "time",
+        "unit": "seconds"
+    },
+    "large_exprs.TimeLargeExpressionOperations.time_free_symbols": {
+        "code": "def time_free_symbols(self):\n\n    self.super_long_expr.free_symbols\n",
+        "goal_time": 2.0,
+        "name": "large_exprs.TimeLargeExpressionOperations.time_free_symbols",
+        "number": 0,
+        "param_names": [],
+        "params": [],
+        "pretty_name": "large_exprs.TimeLargeExpressionOperations.time_free_symbols",
+        "repeat": 0,
+        "timeout": 60.0,
+        "type": "time",
+        "unit": "seconds"
+    },
+    "large_exprs.TimeLargeExpressionOperations.time_jacobian_wrt_functions": {
+        "code": "def time_jacobian_wrt_functions(self):\n\n    self.func_matrix.jacobian(self.funcs)\n",
+        "goal_time": 2.0,
+        "name": "large_exprs.TimeLargeExpressionOperations.time_jacobian_wrt_functions",
+        "number": 0,
+        "param_names": [],
+        "params": [],
+        "pretty_name": "large_exprs.TimeLargeExpressionOperations.time_jacobian_wrt_functions",
+        "repeat": 0,
+        "timeout": 60.0,
+        "type": "time",
+        "unit": "seconds"
+    },
+    "large_exprs.TimeLargeExpressionOperations.time_jacobian_wrt_symbols": {
+        "code": "def time_jacobian_wrt_symbols(self):\n\n    self.sym_matrix.jacobian(self.syms)\n",
+        "goal_time": 2.0,
+        "name": "large_exprs.TimeLargeExpressionOperations.time_jacobian_wrt_symbols",
+        "number": 0,
+        "param_names": [],
+        "params": [],
+        "pretty_name": "large_exprs.TimeLargeExpressionOperations.time_jacobian_wrt_symbols",
+        "repeat": 0,
+        "timeout": 60.0,
+        "type": "time",
+        "unit": "seconds"
+    },
+    "large_exprs.TimeLargeExpressionOperations.time_manual_jacobian_wrt_functions": {
+        "code": "def time_manual_jacobian_wrt_functions(self):\n\n    for expr in self.func_matrix:\n        for func in self.funcs:\n            expr.diff(func)\n",
+        "goal_time": 2.0,
+        "name": "large_exprs.TimeLargeExpressionOperations.time_manual_jacobian_wrt_functions",
+        "number": 0,
+        "param_names": [],
+        "params": [],
+        "pretty_name": "large_exprs.TimeLargeExpressionOperations.time_manual_jacobian_wrt_functions",
+        "repeat": 0,
+        "timeout": 60.0,
+        "type": "time",
+        "unit": "seconds"
+    },
+    "large_exprs.TimeLargeExpressionOperations.time_subs": {
+        "code": "def time_subs(self):\n\n    self.func_matrix.subs(self.subs)\n",
+        "goal_time": 2.0,
+        "name": "large_exprs.TimeLargeExpressionOperations.time_subs",
+        "number": 0,
+        "param_names": [],
+        "params": [],
+        "pretty_name": "large_exprs.TimeLargeExpressionOperations.time_subs",
+        "repeat": 0,
+        "timeout": 60.0,
+        "type": "time",
+        "unit": "seconds"
+    },
+    "logic.LogicSuite.time_dpll": {
+        "code": "def time_dpll(self):\n    for theory in self.theories:\n        if not satisfiable(theory, algorithm='dpll'):\n            raise ValueError(\"Function returned false\")\n",
+        "goal_time": 2.0,
+        "name": "logic.LogicSuite.time_dpll",
+        "number": 0,
+        "param_names": [],
+        "params": [],
+        "pretty_name": "logic.LogicSuite.time_dpll",
+        "repeat": 0,
+        "timeout": 60.0,
+        "type": "time",
+        "unit": "seconds"
+    },
+    "logic.LogicSuite.time_dpll2": {
+        "code": "def time_dpll2(self):\n    for theory in self.theories:\n        if not satisfiable(theory, algorithm='dpll2'):\n            raise ValueError(\"Function returned false\")\n",
+        "goal_time": 2.0,
+        "name": "logic.LogicSuite.time_dpll2",
+        "number": 0,
+        "param_names": [],
+        "params": [],
+        "pretty_name": "logic.LogicSuite.time_dpll2",
+        "repeat": 0,
+        "timeout": 60.0,
+        "type": "time",
+        "unit": "seconds"
+    },
+    "logic.LogicSuite.time_load_file": {
+        "code": "def time_load_file(self):\n    file_name = os.path.join(input_path, 'logic-inputs', '10.cnf')\n    load_file(file_name)\n",
+        "goal_time": 2.0,
+        "name": "logic.LogicSuite.time_load_file",
+        "number": 0,
+        "param_names": [],
+        "params": [],
+        "pretty_name": "logic.LogicSuite.time_load_file",
+        "repeat": 0,
+        "timeout": 60.0,
+        "type": "time",
+        "unit": "seconds"
+    },
+    "physics.mechanics.kane.KanesMethodMassSpringDamper.time_kanesmethod_mass_spring_damper": {
+        "code": "def time_kanesmethod_mass_spring_damper(self):\n    # Create the equations of motion using kanes method\n    self.KM.kanes_equations(self.first_input, self.second_input)\n",
+        "goal_time": 2.0,
+        "name": "physics.mechanics.kane.KanesMethodMassSpringDamper.time_kanesmethod_mass_spring_damper",
+        "number": 0,
+        "param_names": [],
+        "params": [],
+        "pretty_name": "physics.mechanics.kane.KanesMethodMassSpringDamper.time_kanesmethod_mass_spring_damper",
+        "repeat": 0,
+        "timeout": 60.0,
+        "type": "time",
+        "unit": "seconds"
+    },
+    "physics.mechanics.lagrange.LagrangesMethodMassSpringDamper.time_lagrangesmethod_mass_spring_damper": {
+        "code": "def time_lagrangesmethod_mass_spring_damper(self):\n    # Create the equations of motion using lagranges method\n    self.l.form_lagranges_equations()\n",
+        "goal_time": 2.0,
+        "name": "physics.mechanics.lagrange.LagrangesMethodMassSpringDamper.time_lagrangesmethod_mass_spring_damper",
+        "number": 0,
+        "param_names": [],
+        "params": [],
+        "pretty_name": "physics.mechanics.lagrange.LagrangesMethodMassSpringDamper.time_lagrangesmethod_mass_spring_damper",
+        "repeat": 0,
+        "timeout": 60.0,
+        "type": "time",
+        "unit": "seconds"
+    },
+    "solve.TimeMatrixArithmetic.time_dense_add": {
+        "code": "def time_dense_add(self, n, num_symbols):\n    self.A + self.A\n",
+        "goal_time": 2.0,
+        "name": "solve.TimeMatrixArithmetic.time_dense_add",
+        "number": 0,
+        "param_names": [
+            "param1",
+            "param2"
+        ],
+        "params": [
+            [
+                "3",
+                "4",
+                "6",
+                "10"
+            ],
+            [
+                "0",
+                "5"
+            ]
+        ],
+        "pretty_name": "solve.TimeMatrixArithmetic.time_dense_add",
+        "repeat": 0,
+        "timeout": 60.0,
+        "type": "time",
+        "unit": "seconds"
+    },
+    "solve.TimeMatrixArithmetic.time_dense_multiply": {
+        "code": "def time_dense_multiply(self, n, num_symbols):\n    self.A * self.A\n",
+        "goal_time": 2.0,
+        "name": "solve.TimeMatrixArithmetic.time_dense_multiply",
+        "number": 0,
+        "param_names": [
+            "param1",
+            "param2"
+        ],
+        "params": [
+            [
+                "3",
+                "4",
+                "6",
+                "10"
+            ],
+            [
+                "0",
+                "5"
+            ]
+        ],
+        "pretty_name": "solve.TimeMatrixArithmetic.time_dense_multiply",
+        "repeat": 0,
+        "timeout": 60.0,
+        "type": "time",
+        "unit": "seconds"
+    },
+    "solve.TimeMatrixOperations.time_det": {
+        "code": "def time_det(self, n, num_symbols):\n    self.A.det()\n",
+        "goal_time": 2.0,
+        "name": "solve.TimeMatrixOperations.time_det",
+        "number": 0,
+        "param_names": [
+            "param1",
+            "param2"
+        ],
+        "params": [
+            [
+                "3",
+                "4"
+            ],
+            [
+                "0",
+                "2",
+                "5"
+            ]
+        ],
+        "pretty_name": "solve.TimeMatrixOperations.time_det",
+        "repeat": 0,
+        "timeout": 60.0,
+        "type": "time",
+        "unit": "seconds"
+    },
+    "solve.TimeMatrixOperations.time_det_bareiss": {
+        "code": "def time_det_bareiss(self, n, num_symbols):\n    self.A.det(method='bareiss')\n",
+        "goal_time": 2.0,
+        "name": "solve.TimeMatrixOperations.time_det_bareiss",
+        "number": 0,
+        "param_names": [
+            "param1",
+            "param2"
+        ],
+        "params": [
+            [
+                "3",
+                "4"
+            ],
+            [
+                "0",
+                "2",
+                "5"
+            ]
+        ],
+        "pretty_name": "solve.TimeMatrixOperations.time_det_bareiss",
+        "repeat": 0,
+        "timeout": 60.0,
+        "type": "time",
+        "unit": "seconds"
+    },
+    "solve.TimeMatrixOperations.time_det_berkowitz": {
+        "code": "def time_det_berkowitz(self, n, num_symbols):\n    self.A.det(method='berkowitz')\n",
+        "goal_time": 2.0,
+        "name": "solve.TimeMatrixOperations.time_det_berkowitz",
+        "number": 0,
+        "param_names": [
+            "param1",
+            "param2"
+        ],
+        "params": [
+            [
+                "3",
+                "4"
+            ],
+            [
+                "0",
+                "2",
+                "5"
+            ]
+        ],
+        "pretty_name": "solve.TimeMatrixOperations.time_det_berkowitz",
+        "repeat": 0,
+        "timeout": 60.0,
+        "type": "time",
+        "unit": "seconds"
+    },
+    "solve.TimeMatrixOperations.time_rank": {
+        "code": "def time_rank(self, n, num_symbols):\n    self.A.rank()\n",
+        "goal_time": 2.0,
+        "name": "solve.TimeMatrixOperations.time_rank",
+        "number": 0,
+        "param_names": [
+            "param1",
+            "param2"
+        ],
+        "params": [
+            [
+                "3",
+                "4"
+            ],
+            [
+                "0",
+                "2",
+                "5"
+            ]
+        ],
+        "pretty_name": "solve.TimeMatrixOperations.time_rank",
+        "repeat": 0,
+        "timeout": 60.0,
+        "type": "time",
+        "unit": "seconds"
+    },
+    "solve.TimeMatrixOperations.time_rref": {
+        "code": "def time_rref(self, n, num_symbols):\n    self.A.rref()\n",
+        "goal_time": 2.0,
+        "name": "solve.TimeMatrixOperations.time_rref",
+        "number": 0,
+        "param_names": [
+            "param1",
+            "param2"
+        ],
+        "params": [
+            [
+                "3",
+                "4"
+            ],
+            [
+                "0",
+                "2",
+                "5"
+            ]
+        ],
+        "pretty_name": "solve.TimeMatrixOperations.time_rref",
+        "repeat": 0,
+        "timeout": 60.0,
+        "type": "time",
+        "unit": "seconds"
+    },
+    "solve.TimeMatrixSolve.time_solve": {
+        "code": "def time_solve(self, name):\n\n    self.A.solve(self.b, method=name)\n",
+        "goal_time": 2.0,
+        "name": "solve.TimeMatrixSolve.time_solve",
+        "number": 0,
+        "param_names": [
+            "param1"
+        ],
+        "params": [
+            [
+                "'GE'",
+                "'LU'",
+                "'ADJ'"
+            ]
+        ],
+        "pretty_name": "solve.TimeMatrixSolve.time_solve",
+        "repeat": 0,
+        "timeout": 60.0,
+        "type": "time",
+        "unit": "seconds"
+    },
+    "solve.TimeMatrixSolve2.time_cholesky_solve": {
+        "code": "def time_cholesky_solve(self):\n\n    self.A_sym.cholesky_solve(self.b)\n",
+        "goal_time": 2.0,
+        "name": "solve.TimeMatrixSolve2.time_cholesky_solve",
+        "number": 0,
+        "param_names": [],
+        "params": [],
+        "pretty_name": "solve.TimeMatrixSolve2.time_cholesky_solve",
+        "repeat": 0,
+        "timeout": 60.0,
+        "type": "time",
+        "unit": "seconds"
+    },
+    "solve.TimeMatrixSolve2.time_lusolve": {
+        "code": "def time_lusolve(self):\n\n    self.A.LUsolve(self.b)\n",
+        "goal_time": 2.0,
+        "name": "solve.TimeMatrixSolve2.time_lusolve",
+        "number": 0,
+        "param_names": [],
+        "params": [],
+        "pretty_name": "solve.TimeMatrixSolve2.time_lusolve",
+        "repeat": 0,
+        "timeout": 60.0,
+        "type": "time",
+        "unit": "seconds"
+    },
+    "solve.TimeSolve01.time_solve": {
+        "code": "def time_solve(self):\n    sympy.solve(self.eqs, *self.p.c)\n",
+        "goal_time": 2.0,
+        "name": "solve.TimeSolve01.time_solve",
+        "number": 0,
+        "param_names": [],
+        "params": [],
+        "pretty_name": "solve.TimeSolve01.time_solve",
+        "repeat": 0,
+        "timeout": 60.0,
+        "type": "time",
+        "unit": "seconds"
+    },
+    "solve.TimeSolve01.time_solve_nocheck": {
+        "code": "def time_solve_nocheck(self):\n    sympy.solve(self.eqs, *self.p.c, check=False)\n",
+        "goal_time": 2.0,
+        "name": "solve.TimeSolve01.time_solve_nocheck",
+        "number": 0,
+        "param_names": [],
+        "params": [],
+        "pretty_name": "solve.TimeSolve01.time_solve_nocheck",
+        "repeat": 0,
+        "timeout": 60.0,
+        "type": "time",
+        "unit": "seconds"
+    },
+    "sum.TimeSum.time_doit": {
+        "code": "def time_doit(self):\n    self.expr.doit()\n",
+        "goal_time": 2.0,
+        "name": "sum.TimeSum.time_doit",
+        "number": 0,
+        "param_names": [],
+        "params": [],
+        "pretty_name": "sum.TimeSum.time_doit",
+        "repeat": 0,
+        "timeout": 60.0,
+        "type": "time",
+        "unit": "seconds"
+    },
+    "version": 1
+}
