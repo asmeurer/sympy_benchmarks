@@ -1,0 +1,839 @@
+{
+    "benchmarks": {
+        "cse.TimeCSE.time_cse": {
+            "code": "def time_cse(self, nexprs_nterms):\n    sp.cse(self.exprs)\n",
+            "goal_time": 2.0,
+            "name": "cse.TimeCSE.time_cse",
+            "number": 0,
+            "param_names": [
+                "param1"
+            ],
+            "params": [
+                [
+                    "(2, 8)",
+                    "(3, 8)",
+                    "(4, 8)",
+                    "(2, 9)",
+                    "(2, 10)",
+                    "(2, 11)"
+                ]
+            ],
+            "pretty_name": "cse.TimeCSE.time_cse",
+            "repeat": 0,
+            "timeout": 60.0,
+            "type": "time",
+            "unit": "seconds"
+        },
+        "dsolve.TimeDsolve01.time_dsolve": {
+            "code": "def time_dsolve(self):\n    t, y, y0, k = self.params\n    dsolve(self.ode, y[1](t))\n",
+            "goal_time": 2.0,
+            "name": "dsolve.TimeDsolve01.time_dsolve",
+            "number": 0,
+            "param_names": [],
+            "params": [],
+            "pretty_name": "dsolve.TimeDsolve01.time_dsolve",
+            "repeat": 0,
+            "timeout": 60.0,
+            "type": "time",
+            "unit": "seconds"
+        },
+        "integrate.TimeIntegration01.time_doit": {
+            "code": "def time_doit(self):\n    self.values['time_doit'] = self.integral.doit()\n",
+            "goal_time": 2.0,
+            "name": "integrate.TimeIntegration01.time_doit",
+            "number": 0,
+            "param_names": [],
+            "params": [],
+            "pretty_name": "integrate.TimeIntegration01.time_doit",
+            "repeat": 0,
+            "timeout": 60.0,
+            "type": "time",
+            "unit": "seconds"
+        },
+        "integrate.TimeIntegration01.time_doit_meijerg": {
+            "code": "def time_doit_meijerg(self):\n    self.values['time_doit_meijerg'] = self.integral.doit(meijerg=True)\n",
+            "goal_time": 2.0,
+            "name": "integrate.TimeIntegration01.time_doit_meijerg",
+            "number": 0,
+            "param_names": [],
+            "params": [],
+            "pretty_name": "integrate.TimeIntegration01.time_doit_meijerg",
+            "repeat": 0,
+            "timeout": 60.0,
+            "type": "time",
+            "unit": "seconds"
+        },
+        "lambdify.TimeLambdifyCreation.time_lambdify_create": {
+            "code": "def time_lambdify_create(self, modules):\n    sp.lambdify(self.args, self.exprs, modules=modules)\n",
+            "goal_time": 2.0,
+            "name": "lambdify.TimeLambdifyCreation.time_lambdify_create",
+            "number": 0,
+            "param_names": [
+                "param1"
+            ],
+            "params": [
+                [
+                    "['math']",
+                    "['numpy']"
+                ]
+            ],
+            "pretty_name": "lambdify.TimeLambdifyCreation.time_lambdify_create",
+            "repeat": 0,
+            "timeout": 60.0,
+            "type": "time",
+            "unit": "seconds"
+        },
+        "lambdify.TimeLambdifyEvaluate.time_lambdify_evaluate": {
+            "code": "def time_lambdify_evaluate(self, modules):\n    self.lmb(*self.inp)\n",
+            "goal_time": 2.0,
+            "name": "lambdify.TimeLambdifyEvaluate.time_lambdify_evaluate",
+            "number": 0,
+            "param_names": [
+                "param1"
+            ],
+            "params": [
+                [
+                    "['math']",
+                    "['numpy']"
+                ]
+            ],
+            "pretty_name": "lambdify.TimeLambdifyEvaluate.time_lambdify_evaluate",
+            "repeat": 0,
+            "timeout": 60.0,
+            "type": "time",
+            "unit": "seconds"
+        },
+        "large_exprs.TimeLargeExpressionOperations.peakmem_jacobian_wrt_functions": {
+            "code": "def peakmem_jacobian_wrt_functions(self):\n\n    self.func_matrix.jacobian(self.funcs)\n",
+            "name": "large_exprs.TimeLargeExpressionOperations.peakmem_jacobian_wrt_functions",
+            "param_names": [],
+            "params": [],
+            "pretty_name": "large_exprs.TimeLargeExpressionOperations.peakmem_jacobian_wrt_functions",
+            "timeout": 60.0,
+            "type": "peakmemory",
+            "unit": "bytes"
+        },
+        "large_exprs.TimeLargeExpressionOperations.peakmem_jacobian_wrt_symbols": {
+            "code": "def peakmem_jacobian_wrt_symbols(self):\n\n    self.sym_matrix.jacobian(self.syms)\n",
+            "name": "large_exprs.TimeLargeExpressionOperations.peakmem_jacobian_wrt_symbols",
+            "param_names": [],
+            "params": [],
+            "pretty_name": "large_exprs.TimeLargeExpressionOperations.peakmem_jacobian_wrt_symbols",
+            "timeout": 60.0,
+            "type": "peakmemory",
+            "unit": "bytes"
+        },
+        "large_exprs.TimeLargeExpressionOperations.peakmem_subs": {
+            "code": "def peakmem_subs(self):\n\n    self.func_matrix.subs(self.subs)\n",
+            "name": "large_exprs.TimeLargeExpressionOperations.peakmem_subs",
+            "param_names": [],
+            "params": [],
+            "pretty_name": "large_exprs.TimeLargeExpressionOperations.peakmem_subs",
+            "timeout": 60.0,
+            "type": "peakmemory",
+            "unit": "bytes"
+        },
+        "large_exprs.TimeLargeExpressionOperations.time_count_ops": {
+            "code": "def time_count_ops(self):\n\n    self.super_long_expr.count_ops()\n",
+            "goal_time": 2.0,
+            "name": "large_exprs.TimeLargeExpressionOperations.time_count_ops",
+            "number": 0,
+            "param_names": [],
+            "params": [],
+            "pretty_name": "large_exprs.TimeLargeExpressionOperations.time_count_ops",
+            "repeat": 0,
+            "timeout": 60.0,
+            "type": "time",
+            "unit": "seconds"
+        },
+        "large_exprs.TimeLargeExpressionOperations.time_cse": {
+            "code": "def time_cse(self):\n\n    sm.cse(self.long_expr)\n",
+            "goal_time": 2.0,
+            "name": "large_exprs.TimeLargeExpressionOperations.time_cse",
+            "number": 0,
+            "param_names": [],
+            "params": [],
+            "pretty_name": "large_exprs.TimeLargeExpressionOperations.time_cse",
+            "repeat": 0,
+            "timeout": 60.0,
+            "type": "time",
+            "unit": "seconds"
+        },
+        "large_exprs.TimeLargeExpressionOperations.time_free_symbols": {
+            "code": "def time_free_symbols(self):\n\n    self.super_long_expr.free_symbols\n",
+            "goal_time": 2.0,
+            "name": "large_exprs.TimeLargeExpressionOperations.time_free_symbols",
+            "number": 0,
+            "param_names": [],
+            "params": [],
+            "pretty_name": "large_exprs.TimeLargeExpressionOperations.time_free_symbols",
+            "repeat": 0,
+            "timeout": 60.0,
+            "type": "time",
+            "unit": "seconds"
+        },
+        "large_exprs.TimeLargeExpressionOperations.time_jacobian_wrt_functions": {
+            "code": "def time_jacobian_wrt_functions(self):\n\n    self.func_matrix.jacobian(self.funcs)\n",
+            "goal_time": 2.0,
+            "name": "large_exprs.TimeLargeExpressionOperations.time_jacobian_wrt_functions",
+            "number": 0,
+            "param_names": [],
+            "params": [],
+            "pretty_name": "large_exprs.TimeLargeExpressionOperations.time_jacobian_wrt_functions",
+            "repeat": 0,
+            "timeout": 60.0,
+            "type": "time",
+            "unit": "seconds"
+        },
+        "large_exprs.TimeLargeExpressionOperations.time_jacobian_wrt_symbols": {
+            "code": "def time_jacobian_wrt_symbols(self):\n\n    self.sym_matrix.jacobian(self.syms)\n",
+            "goal_time": 2.0,
+            "name": "large_exprs.TimeLargeExpressionOperations.time_jacobian_wrt_symbols",
+            "number": 0,
+            "param_names": [],
+            "params": [],
+            "pretty_name": "large_exprs.TimeLargeExpressionOperations.time_jacobian_wrt_symbols",
+            "repeat": 0,
+            "timeout": 60.0,
+            "type": "time",
+            "unit": "seconds"
+        },
+        "large_exprs.TimeLargeExpressionOperations.time_manual_jacobian_wrt_functions": {
+            "code": "def time_manual_jacobian_wrt_functions(self):\n\n    for expr in self.func_matrix:\n        for func in self.funcs:\n            expr.diff(func)\n",
+            "goal_time": 2.0,
+            "name": "large_exprs.TimeLargeExpressionOperations.time_manual_jacobian_wrt_functions",
+            "number": 0,
+            "param_names": [],
+            "params": [],
+            "pretty_name": "large_exprs.TimeLargeExpressionOperations.time_manual_jacobian_wrt_functions",
+            "repeat": 0,
+            "timeout": 60.0,
+            "type": "time",
+            "unit": "seconds"
+        },
+        "large_exprs.TimeLargeExpressionOperations.time_subs": {
+            "code": "def time_subs(self):\n\n    self.func_matrix.subs(self.subs)\n",
+            "goal_time": 2.0,
+            "name": "large_exprs.TimeLargeExpressionOperations.time_subs",
+            "number": 0,
+            "param_names": [],
+            "params": [],
+            "pretty_name": "large_exprs.TimeLargeExpressionOperations.time_subs",
+            "repeat": 0,
+            "timeout": 60.0,
+            "type": "time",
+            "unit": "seconds"
+        },
+        "logic.LogicSuite.time_dpll": {
+            "code": "def time_dpll(self):\n    for theory in self.theories:\n        if not satisfiable(theory, algorithm='dpll'):\n            raise ValueError(\"Function returned false\")\n",
+            "goal_time": 2.0,
+            "name": "logic.LogicSuite.time_dpll",
+            "number": 0,
+            "param_names": [],
+            "params": [],
+            "pretty_name": "logic.LogicSuite.time_dpll",
+            "repeat": 0,
+            "timeout": 60.0,
+            "type": "time",
+            "unit": "seconds"
+        },
+        "logic.LogicSuite.time_dpll2": {
+            "code": "def time_dpll2(self):\n    for theory in self.theories:\n        if not satisfiable(theory, algorithm='dpll2'):\n            raise ValueError(\"Function returned false\")\n",
+            "goal_time": 2.0,
+            "name": "logic.LogicSuite.time_dpll2",
+            "number": 0,
+            "param_names": [],
+            "params": [],
+            "pretty_name": "logic.LogicSuite.time_dpll2",
+            "repeat": 0,
+            "timeout": 60.0,
+            "type": "time",
+            "unit": "seconds"
+        },
+        "logic.LogicSuite.time_load_file": {
+            "code": "def time_load_file(self):\n    file_name = os.path.join(input_path, 'logic-inputs', '10.cnf')\n    load_file(file_name)\n",
+            "goal_time": 2.0,
+            "name": "logic.LogicSuite.time_load_file",
+            "number": 0,
+            "param_names": [],
+            "params": [],
+            "pretty_name": "logic.LogicSuite.time_load_file",
+            "repeat": 0,
+            "timeout": 60.0,
+            "type": "time",
+            "unit": "seconds"
+        },
+        "physics.mechanics.kane.KanesMethodMassSpringDamper.time_kanesmethod_mass_spring_damper": {
+            "code": "def time_kanesmethod_mass_spring_damper(self):\n    # Create the equations of motion using kanes method\n    self.KM.kanes_equations(self.first_input, self.second_input)\n",
+            "goal_time": 2.0,
+            "name": "physics.mechanics.kane.KanesMethodMassSpringDamper.time_kanesmethod_mass_spring_damper",
+            "number": 0,
+            "param_names": [],
+            "params": [],
+            "pretty_name": "physics.mechanics.kane.KanesMethodMassSpringDamper.time_kanesmethod_mass_spring_damper",
+            "repeat": 0,
+            "timeout": 60.0,
+            "type": "time",
+            "unit": "seconds"
+        },
+        "physics.mechanics.lagrange.LagrangesMethodMassSpringDamper.time_lagrangesmethod_mass_spring_damper": {
+            "code": "def time_lagrangesmethod_mass_spring_damper(self):\n    # Create the equations of motion using lagranges method\n    self.l.form_lagranges_equations()\n",
+            "goal_time": 2.0,
+            "name": "physics.mechanics.lagrange.LagrangesMethodMassSpringDamper.time_lagrangesmethod_mass_spring_damper",
+            "number": 0,
+            "param_names": [],
+            "params": [],
+            "pretty_name": "physics.mechanics.lagrange.LagrangesMethodMassSpringDamper.time_lagrangesmethod_mass_spring_damper",
+            "repeat": 0,
+            "timeout": 60.0,
+            "type": "time",
+            "unit": "seconds"
+        },
+        "solve.TimeMatrixArithmetic.time_dense_add": {
+            "code": "def time_dense_add(self, n, num_symbols):\n    self.A + self.A\n",
+            "goal_time": 2.0,
+            "name": "solve.TimeMatrixArithmetic.time_dense_add",
+            "number": 0,
+            "param_names": [
+                "param1",
+                "param2"
+            ],
+            "params": [
+                [
+                    "3",
+                    "4",
+                    "6",
+                    "10"
+                ],
+                [
+                    "0",
+                    "5"
+                ]
+            ],
+            "pretty_name": "solve.TimeMatrixArithmetic.time_dense_add",
+            "repeat": 0,
+            "timeout": 60.0,
+            "type": "time",
+            "unit": "seconds"
+        },
+        "solve.TimeMatrixArithmetic.time_dense_multiply": {
+            "code": "def time_dense_multiply(self, n, num_symbols):\n    self.A * self.A\n",
+            "goal_time": 2.0,
+            "name": "solve.TimeMatrixArithmetic.time_dense_multiply",
+            "number": 0,
+            "param_names": [
+                "param1",
+                "param2"
+            ],
+            "params": [
+                [
+                    "3",
+                    "4",
+                    "6",
+                    "10"
+                ],
+                [
+                    "0",
+                    "5"
+                ]
+            ],
+            "pretty_name": "solve.TimeMatrixArithmetic.time_dense_multiply",
+            "repeat": 0,
+            "timeout": 60.0,
+            "type": "time",
+            "unit": "seconds"
+        },
+        "solve.TimeMatrixOperations.time_det": {
+            "code": "def time_det(self, n, num_symbols):\n    self.A.det()\n",
+            "goal_time": 2.0,
+            "name": "solve.TimeMatrixOperations.time_det",
+            "number": 0,
+            "param_names": [
+                "param1",
+                "param2"
+            ],
+            "params": [
+                [
+                    "3",
+                    "4"
+                ],
+                [
+                    "0",
+                    "2",
+                    "5"
+                ]
+            ],
+            "pretty_name": "solve.TimeMatrixOperations.time_det",
+            "repeat": 0,
+            "timeout": 60.0,
+            "type": "time",
+            "unit": "seconds"
+        },
+        "solve.TimeMatrixOperations.time_det_bareiss": {
+            "code": "def time_det_bareiss(self, n, num_symbols):\n    self.A.det(method='bareiss')\n",
+            "goal_time": 2.0,
+            "name": "solve.TimeMatrixOperations.time_det_bareiss",
+            "number": 0,
+            "param_names": [
+                "param1",
+                "param2"
+            ],
+            "params": [
+                [
+                    "3",
+                    "4"
+                ],
+                [
+                    "0",
+                    "2",
+                    "5"
+                ]
+            ],
+            "pretty_name": "solve.TimeMatrixOperations.time_det_bareiss",
+            "repeat": 0,
+            "timeout": 60.0,
+            "type": "time",
+            "unit": "seconds"
+        },
+        "solve.TimeMatrixOperations.time_det_berkowitz": {
+            "code": "def time_det_berkowitz(self, n, num_symbols):\n    self.A.det(method='berkowitz')\n",
+            "goal_time": 2.0,
+            "name": "solve.TimeMatrixOperations.time_det_berkowitz",
+            "number": 0,
+            "param_names": [
+                "param1",
+                "param2"
+            ],
+            "params": [
+                [
+                    "3",
+                    "4"
+                ],
+                [
+                    "0",
+                    "2",
+                    "5"
+                ]
+            ],
+            "pretty_name": "solve.TimeMatrixOperations.time_det_berkowitz",
+            "repeat": 0,
+            "timeout": 60.0,
+            "type": "time",
+            "unit": "seconds"
+        },
+        "solve.TimeMatrixOperations.time_rank": {
+            "code": "def time_rank(self, n, num_symbols):\n    self.A.rank()\n",
+            "goal_time": 2.0,
+            "name": "solve.TimeMatrixOperations.time_rank",
+            "number": 0,
+            "param_names": [
+                "param1",
+                "param2"
+            ],
+            "params": [
+                [
+                    "3",
+                    "4"
+                ],
+                [
+                    "0",
+                    "2",
+                    "5"
+                ]
+            ],
+            "pretty_name": "solve.TimeMatrixOperations.time_rank",
+            "repeat": 0,
+            "timeout": 60.0,
+            "type": "time",
+            "unit": "seconds"
+        },
+        "solve.TimeMatrixOperations.time_rref": {
+            "code": "def time_rref(self, n, num_symbols):\n    self.A.rref()\n",
+            "goal_time": 2.0,
+            "name": "solve.TimeMatrixOperations.time_rref",
+            "number": 0,
+            "param_names": [
+                "param1",
+                "param2"
+            ],
+            "params": [
+                [
+                    "3",
+                    "4"
+                ],
+                [
+                    "0",
+                    "2",
+                    "5"
+                ]
+            ],
+            "pretty_name": "solve.TimeMatrixOperations.time_rref",
+            "repeat": 0,
+            "timeout": 60.0,
+            "type": "time",
+            "unit": "seconds"
+        },
+        "solve.TimeMatrixSolve.time_solve": {
+            "code": "def time_solve(self, name):\n\n    self.A.solve(self.b, method=name)\n",
+            "goal_time": 2.0,
+            "name": "solve.TimeMatrixSolve.time_solve",
+            "number": 0,
+            "param_names": [
+                "param1"
+            ],
+            "params": [
+                [
+                    "'GE'",
+                    "'LU'",
+                    "'ADJ'"
+                ]
+            ],
+            "pretty_name": "solve.TimeMatrixSolve.time_solve",
+            "repeat": 0,
+            "timeout": 60.0,
+            "type": "time",
+            "unit": "seconds"
+        },
+        "solve.TimeMatrixSolve2.time_cholesky_solve": {
+            "code": "def time_cholesky_solve(self):\n\n    self.A_sym.cholesky_solve(self.b)\n",
+            "goal_time": 2.0,
+            "name": "solve.TimeMatrixSolve2.time_cholesky_solve",
+            "number": 0,
+            "param_names": [],
+            "params": [],
+            "pretty_name": "solve.TimeMatrixSolve2.time_cholesky_solve",
+            "repeat": 0,
+            "timeout": 60.0,
+            "type": "time",
+            "unit": "seconds"
+        },
+        "solve.TimeMatrixSolve2.time_lusolve": {
+            "code": "def time_lusolve(self):\n\n    self.A.LUsolve(self.b)\n",
+            "goal_time": 2.0,
+            "name": "solve.TimeMatrixSolve2.time_lusolve",
+            "number": 0,
+            "param_names": [],
+            "params": [],
+            "pretty_name": "solve.TimeMatrixSolve2.time_lusolve",
+            "repeat": 0,
+            "timeout": 60.0,
+            "type": "time",
+            "unit": "seconds"
+        },
+        "solve.TimeSolve01.time_solve": {
+            "code": "def time_solve(self):\n    sympy.solve(self.eqs, *self.p.c)\n",
+            "goal_time": 2.0,
+            "name": "solve.TimeSolve01.time_solve",
+            "number": 0,
+            "param_names": [],
+            "params": [],
+            "pretty_name": "solve.TimeSolve01.time_solve",
+            "repeat": 0,
+            "timeout": 60.0,
+            "type": "time",
+            "unit": "seconds"
+        },
+        "solve.TimeSolve01.time_solve_nocheck": {
+            "code": "def time_solve_nocheck(self):\n    sympy.solve(self.eqs, *self.p.c, check=False)\n",
+            "goal_time": 2.0,
+            "name": "solve.TimeSolve01.time_solve_nocheck",
+            "number": 0,
+            "param_names": [],
+            "params": [],
+            "pretty_name": "solve.TimeSolve01.time_solve_nocheck",
+            "repeat": 0,
+            "timeout": 60.0,
+            "type": "time",
+            "unit": "seconds"
+        },
+        "sum.TimeSum.time_doit": {
+            "code": "def time_doit(self):\n    self.expr.doit()\n",
+            "goal_time": 2.0,
+            "name": "sum.TimeSum.time_doit",
+            "number": 0,
+            "param_names": [],
+            "params": [],
+            "pretty_name": "sum.TimeSum.time_doit",
+            "repeat": 0,
+            "timeout": 60.0,
+            "type": "time",
+            "unit": "seconds"
+        }
+    },
+    "graph_param_list": [
+        {
+            "arch": "x86_64",
+            "branch": "rm-cmp",
+            "cpu": "Intel(R) Core(TM) i7-3615QM CPU @ 2.30GHz",
+            "fastcache": "",
+            "machine": "Aarons-MacBook-Pro.local",
+            "mpmath": "",
+            "numpy": "",
+            "os": "Darwin 15.6.0",
+            "python": "3.5",
+            "ram": "8589934592"
+        }
+    ],
+    "hash_length": 8,
+    "machines": {
+        "Aarons-MacBook-Pro.local": {
+            "arch": "x86_64",
+            "cpu": "Intel(R) Core(TM) i7-3615QM CPU @ 2.30GHz",
+            "machine": "Aarons-MacBook-Pro.local",
+            "os": "Darwin 15.6.0",
+            "ram": "8589934592",
+            "version": 1
+        }
+    },
+    "pages": [
+        [
+            "",
+            "Grid view",
+            "Display as a agrid"
+        ],
+        [
+            "summarylist",
+            "List view",
+            "Display as a list"
+        ],
+        [
+            "regressions",
+            "Show regressions",
+            "Display information about recent regressions"
+        ]
+    ],
+    "params": {
+        "arch": [
+            "x86_64"
+        ],
+        "branch": [
+            "master",
+            "rm-cmp"
+        ],
+        "cpu": [
+            "Intel(R) Core(TM) i7-3615QM CPU @ 2.30GHz"
+        ],
+        "fastcache": [
+            ""
+        ],
+        "machine": [
+            "Aarons-MacBook-Pro.local"
+        ],
+        "mpmath": [
+            ""
+        ],
+        "numpy": [
+            ""
+        ],
+        "os": [
+            "Darwin 15.6.0"
+        ],
+        "python": [
+            "3.5"
+        ],
+        "ram": [
+            "8589934592"
+        ]
+    },
+    "project": "sympy",
+    "project_url": "http://sympy.org/",
+    "revision_to_date": {
+        "221": 1186906801000,
+        "327": 1189257301000,
+        "576": 1191596284000,
+        "626": 1192918201000,
+        "634": 1193708806000,
+        "647": 1195256582000,
+        "689": 1196948647000,
+        "715": 1198274448000,
+        "757": 1199456458000,
+        "766": 1199660205000,
+        "865": 1201473035000,
+        "993": 1204836347000,
+        "1164": 1209242958000,
+        "1223": 1211648372000,
+        "1367": 1215459511000,
+        "1496": 1216756221000,
+        "1657": 1218985017000,
+        "1903": 1226955257000,
+        "1910": 1227026177000,
+        "1913": 1227128164000,
+        "2046": 1234166288000,
+        "2086": 1236804125000,
+        "2195": 1238384468000,
+        "2207": 1238889910000,
+        "2480": 1245899178000,
+        "2500": 1245955512000,
+        "2511": 1245993906000,
+        "2612": 1246977976000,
+        "2656": 1247333707000,
+        "2698": 1247701259000,
+        "2703": 1247779001000,
+        "3170": 1251439472000,
+        "3582": 1261272101000,
+        "3583": 1261342300000,
+        "3659": 1268858331000,
+        "3691": 1268859383000,
+        "5151": 1281990343000,
+        "5377": 1286493092000,
+        "7813": 1307855759000,
+        "7844": 1308111488000,
+        "7967": 1309219432000,
+        "8338": 1311405386000,
+        "8385": 1311984615000,
+        "13981": 1349762332000,
+        "14055": 1350440998000,
+        "18276": 1373162981000,
+        "18452": 1373690695000,
+        "20446": 1385964383000,
+        "20498": 1386543414000,
+        "20545": 1387128071000,
+        "21109": 1392645779000,
+        "21142": 1393096359000,
+        "23783": 1415306726000,
+        "23803": 1415913365000,
+        "23863": 1416503374000,
+        "26137": 1441312414000,
+        "27619": 1456504641000,
+        "27703": 1457462133000,
+        "32042": 1499028114000,
+        "32090": 1499296404000,
+        "32345": 1500660842000,
+        "32415": 1501109172000,
+        "32427": 1501182996000,
+        "32452": 1501541010000,
+        "32463": 1501695995000
+    },
+    "revision_to_hash": {
+        "221": "5ca62f48fc46a1ad78c930baf41a8f185853c26e",
+        "327": "79be938cd31d5777f2b115633aafdec63f4e2b3c",
+        "576": "2f112ee80eadd68eba28224bd7cc4a568ed0cb42",
+        "626": "99a857f5e03bd161724956f8f56c060911c72ce0",
+        "634": "ffe3ee7e7cec4912756c4dc420e46af47554bafe",
+        "647": "15730998189176c8e5a31d944a098202969238e6",
+        "689": "2a503e7f37141d6b6577ce9d94df51f7fdb43594",
+        "715": "f0b20273d7f443e688fd715a738181abe6167f2d",
+        "757": "263f0be67909c67d245df19b009426cbcdbcb2cb",
+        "766": "3bfe510f7980a283caec5d4363a10a1719f50127",
+        "865": "48a6528052d2006adc587049f006a88b404b361f",
+        "993": "59c43aae81347becdfe35fcb4712f9eaa42290e8",
+        "1164": "6f7c1f20683fd92a2627b6902ce72e6e6b03bac5",
+        "1223": "a13bbf9b6342d653ea4af6167f90d49dd5f98d93",
+        "1367": "5fd088851e7e0903c0b1102dc2aae81cb10a0e37",
+        "1496": "91e8deb79f7ac47d091fa7bd96a04de1b687c5cb",
+        "1657": "29527970b7de602ba73af78a26939fa116f987ca",
+        "1903": "e9e822e881fc20c5f19fc66996809653dc62de80",
+        "1910": "2eef32be2ee7c0bbace333e7aacac7caae22a39b",
+        "1913": "77cd74d5d4cf8ed528c662ccd7b4f748bf9ba76e",
+        "2046": "9fc3cdb31144e69450168ae7b000d8b1a2560087",
+        "2086": "a0c2d301663770f201eae0763da96db6daf3be9e",
+        "2195": "4afce86f01061b902987ed741b9eb0a20f7edae3",
+        "2207": "163977849a0f98ab3bc38bbf0c57d6fcbb7e1551",
+        "2480": "11066c95855b70afe4bc6c996b052ef04577d79b",
+        "2500": "63b83f1114107c76732f1ecedc51a504db41990b",
+        "2511": "d6b088562a0e544bf4450516c4316ad486849354",
+        "2612": "dbc6ecc86c591c07ab847ae340a8cf83a287daef",
+        "2656": "9dd413b15a57643e7db64be7e3c4631ca8031e56",
+        "2698": "5cf20a0f0a59a4ec7981be3db54504f0761cc290",
+        "2703": "63b4fcbe4227a18b9150c7efae322d5d44c271e7",
+        "3170": "a226e2efe227d0120932224f5f973d317086da89",
+        "3582": "243d4c8ab0e7e7815b1aa1f7843a0a558341d94d",
+        "3583": "d033c66df89aa488b87ee6002ca2c5c39e6bd552",
+        "3659": "632105e37f59d186eef6af5d5b54399b411f9d98",
+        "3691": "32f00779c494505af63164bd5af1a07356b633b8",
+        "5151": "27604469ec269f3b0f13a0f78d0b6cbd18d8f95c",
+        "5377": "341eb09f3e2a8fad2d81e4a8cc2836cd4c750f02",
+        "7813": "4973909448873682a28d0d584bf6b5fc3580a924",
+        "7844": "bf199c202ed36862c3990e85a4a9f243cb5693cb",
+        "7967": "c9470ac4f44e7dacfb026cf74529db3ec0822145",
+        "8338": "5d31bca66975f0ca10d5d7ecd91279650c9aa9e1",
+        "8385": "556fe557e924e39b267e70de601ee98e55c0f44e",
+        "13981": "db3f318f2df7014c43cbad593e456bcb1bedab0b",
+        "14055": "bc35cf9e9b34d407b89e178c878977aa602a3dae",
+        "18276": "7e3bcfbb14948c698d4bdddcb839d587ca602ae2",
+        "18452": "f44c2c6afb1eaf5f1071b49bcd147e0d6197923a",
+        "20446": "0975209e3ad0488ddc69f8ba57ca9aca5d7347c9",
+        "20498": "576be9613571ada9aa4df3fa84a686fe96c279d7",
+        "20545": "d007af8e5cd4e7a7f4b3a0a603b7ced492c7a784",
+        "21109": "5fe5e63f84007b92cc85774b7464bb39242224b4",
+        "21142": "ccb64e88fdf6e83eb17b2850d7fcd5e9a0c82425",
+        "23783": "b0d20e924e2d66192fe44f2503272fdf0e09171e",
+        "23803": "5350293ad2a807c2672f73cdd1c860a0a0169343",
+        "23863": "5403e74b8f4d8a49f3532a2a26a052ae682d213d",
+        "26137": "c86942c6ae2adfe505124366095c0dbeb5694aa2",
+        "27619": "323d4a54eb94f6b79f32dd69779bf1952097def9",
+        "27703": "9a15941d326bd7955b42bd7823015786d05132f7",
+        "32042": "fe3b203a03005e39e857a8a209160aa8b4a48e25",
+        "32090": "51be47d700717e2c88c53eed81e3155651a047d2",
+        "32345": "f38e8dce3662a5782bc076da87803223bb529c18",
+        "32415": "56cc73850cbc7b249cc429e9616c8cfc132d516d",
+        "32427": "4c15bbb94a1b5f878d355206d080f0a395baa7fd",
+        "32452": "68ee8964863432fa714b7d623ec25ff4ab583ca7",
+        "32463": "fc5461f962cb918df66db45b10596e818d3eff9a"
+    },
+    "show_commit_url": "http://github.com/sympy/sympy/commit/",
+    "tags": {
+        "GSoC-2009-End": 3170,
+        "GSoC-2010-End": 5151,
+        "integration3-20101212": 5377,
+        "luke_reviews": 2511,
+        "sympy-0.5.0": 221,
+        "sympy-0.5.10": 757,
+        "sympy-0.5.11": 766,
+        "sympy-0.5.12": 865,
+        "sympy-0.5.13": 993,
+        "sympy-0.5.14": 1164,
+        "sympy-0.5.15": 1223,
+        "sympy-0.5.3": 327,
+        "sympy-0.5.4": 576,
+        "sympy-0.5.5": 626,
+        "sympy-0.5.6": 634,
+        "sympy-0.5.7": 647,
+        "sympy-0.5.8": 689,
+        "sympy-0.5.9": 715,
+        "sympy-0.6.0": 1367,
+        "sympy-0.6.1": 1496,
+        "sympy-0.6.2": 1657,
+        "sympy-0.6.3": 1913,
+        "sympy-0.6.3.beta1": 1903,
+        "sympy-0.6.3.beta2": 1910,
+        "sympy-0.6.4": 2207,
+        "sympy-0.6.4.beta1": 2046,
+        "sympy-0.6.4.beta2": 2086,
+        "sympy-0.6.4.beta3": 2195,
+        "sympy-0.6.5": 2703,
+        "sympy-0.6.5-beta1": 2480,
+        "sympy-0.6.5.beta2": 2500,
+        "sympy-0.6.5.beta3": 2612,
+        "sympy-0.6.5.rc1": 2656,
+        "sympy-0.6.5.rc2": 2698,
+        "sympy-0.6.6": 3583,
+        "sympy-0.6.6.rc1": 3582,
+        "sympy-0.6.7": 3659,
+        "sympy-0.6.7-merge": 3691,
+        "sympy-0.7.0": 7967,
+        "sympy-0.7.0.rc1": 7813,
+        "sympy-0.7.0.rc2": 7844,
+        "sympy-0.7.1": 8385,
+        "sympy-0.7.1.rc1": 8338,
+        "sympy-0.7.2": 14055,
+        "sympy-0.7.2.rc1": 13981,
+        "sympy-0.7.3": 18452,
+        "sympy-0.7.3.rc1": 18276,
+        "sympy-0.7.4": 20498,
+        "sympy-0.7.4.1": 20545,
+        "sympy-0.7.4.rc1": 20446,
+        "sympy-0.7.5": 21142,
+        "sympy-0.7.5.rc1": 21109,
+        "sympy-0.7.6": 23863,
+        "sympy-0.7.6.1": 26137,
+        "sympy-0.7.6.rc1": 23783,
+        "sympy-0.7.6.rc2": 23803,
+        "sympy-1.0": 27703,
+        "sympy-1.0.rc1": 27619,
+        "sympy-1.1": 32090,
+        "sympy-1.1.1": 32415,
+        "sympy-1.1.1rc1": 32345,
+        "sympy-1.1rc1": 32042
+    }
+}

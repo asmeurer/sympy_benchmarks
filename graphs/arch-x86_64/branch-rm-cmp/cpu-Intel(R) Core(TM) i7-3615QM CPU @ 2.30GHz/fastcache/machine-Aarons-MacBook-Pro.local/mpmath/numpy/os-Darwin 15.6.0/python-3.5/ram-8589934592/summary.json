@@ -1,0 +1,822 @@
+[
+    {
+        "change_rev": null,
+        "idx": 0,
+        "last_err": 5.735999999999965e-05,
+        "last_rev": 32463,
+        "last_value": 0.00280527,
+        "name": "cse.TimeCSE.time_cse",
+        "pretty_name": "cse.TimeCSE.time_cse((2, 8))",
+        "prev_value": null
+    },
+    {
+        "change_rev": null,
+        "idx": 1,
+        "last_err": 5.784999999999934e-05,
+        "last_rev": 32463,
+        "last_value": 0.0029890899999999985,
+        "name": "cse.TimeCSE.time_cse",
+        "pretty_name": "cse.TimeCSE.time_cse((3, 8))",
+        "prev_value": null
+    },
+    {
+        "change_rev": null,
+        "idx": 2,
+        "last_err": 0.00017269333333333383,
+        "last_rev": 32463,
+        "last_value": 0.00340866,
+        "name": "cse.TimeCSE.time_cse",
+        "pretty_name": "cse.TimeCSE.time_cse((4, 8))",
+        "prev_value": null
+    },
+    {
+        "change_rev": null,
+        "idx": 3,
+        "last_err": 0.00013851333333333285,
+        "last_rev": 32463,
+        "last_value": 0.0032522700000000037,
+        "name": "cse.TimeCSE.time_cse",
+        "pretty_name": "cse.TimeCSE.time_cse((2, 9))",
+        "prev_value": null
+    },
+    {
+        "change_rev": null,
+        "idx": 4,
+        "last_err": 0.0003246066666666666,
+        "last_rev": 32463,
+        "last_value": 0.0035638499999999995,
+        "name": "cse.TimeCSE.time_cse",
+        "pretty_name": "cse.TimeCSE.time_cse((2, 10))",
+        "prev_value": null
+    },
+    {
+        "change_rev": null,
+        "idx": 5,
+        "last_err": 0.00026016333333333234,
+        "last_rev": 32463,
+        "last_value": 0.004144020000000002,
+        "name": "cse.TimeCSE.time_cse",
+        "pretty_name": "cse.TimeCSE.time_cse((2, 11))",
+        "prev_value": null
+    },
+    {
+        "change_rev": null,
+        "idx": null,
+        "last_err": 0.01940266666666653,
+        "last_rev": 32463,
+        "last_value": 0.6562799999999998,
+        "name": "dsolve.TimeDsolve01.time_dsolve",
+        "pretty_name": "dsolve.TimeDsolve01.time_dsolve",
+        "prev_value": null
+    },
+    {
+        "change_rev": null,
+        "idx": null,
+        "last_err": 0.007069666666666678,
+        "last_rev": 32463,
+        "last_value": 0.20223299999999989,
+        "name": "integrate.TimeIntegration01.time_doit",
+        "pretty_name": "integrate.TimeIntegration01.time_doit",
+        "prev_value": null
+    },
+    {
+        "change_rev": null,
+        "idx": null,
+        "last_err": 0.001451333333333249,
+        "last_rev": 32463,
+        "last_value": 0.10906600000000033,
+        "name": "integrate.TimeIntegration01.time_doit_meijerg",
+        "pretty_name": "integrate.TimeIntegration01.time_doit_meijerg",
+        "prev_value": null
+    },
+    {
+        "change_rev": null,
+        "idx": 0,
+        "last_err": 0.005725666666666666,
+        "last_rev": 32463,
+        "last_value": 0.0786085,
+        "name": "lambdify.TimeLambdifyCreation.time_lambdify_create",
+        "pretty_name": "lambdify.TimeLambdifyCreation.time_lambdify_create(['math'])",
+        "prev_value": null
+    },
+    {
+        "change_rev": null,
+        "idx": 1,
+        "last_err": 0.0020565000000000258,
+        "last_rev": 32463,
+        "last_value": 0.07682359999999999,
+        "name": "lambdify.TimeLambdifyCreation.time_lambdify_create",
+        "pretty_name": "lambdify.TimeLambdifyCreation.time_lambdify_create(['numpy'])",
+        "prev_value": null
+    },
+    {
+        "change_rev": null,
+        "idx": 0,
+        "last_err": 6.752633333333337e-07,
+        "last_rev": 32463,
+        "last_value": 1.519889e-05,
+        "name": "lambdify.TimeLambdifyEvaluate.time_lambdify_evaluate",
+        "pretty_name": "lambdify.TimeLambdifyEvaluate.time_lambdify_evaluate(['math'])",
+        "prev_value": null
+    },
+    {
+        "change_rev": null,
+        "idx": 1,
+        "last_err": 1.9293666666666583e-05,
+        "last_rev": 32463,
+        "last_value": 0.00025494499999999997,
+        "name": "lambdify.TimeLambdifyEvaluate.time_lambdify_evaluate",
+        "pretty_name": "lambdify.TimeLambdifyEvaluate.time_lambdify_evaluate(['numpy'])",
+        "prev_value": null
+    },
+    {
+        "change_rev": null,
+        "idx": null,
+        "last_err": 226645.33333333334,
+        "last_rev": 32463,
+        "last_value": 44306432.0,
+        "name": "large_exprs.TimeLargeExpressionOperations.peakmem_jacobian_wrt_functions",
+        "pretty_name": "large_exprs.TimeLargeExpressionOperations.peakmem_jacobian_wrt_functions",
+        "prev_value": null
+    },
+    {
+        "change_rev": null,
+        "idx": null,
+        "last_err": 91477.33333333333,
+        "last_rev": 32463,
+        "last_value": 44531712.0,
+        "name": "large_exprs.TimeLargeExpressionOperations.peakmem_jacobian_wrt_symbols",
+        "pretty_name": "large_exprs.TimeLargeExpressionOperations.peakmem_jacobian_wrt_symbols",
+        "prev_value": null
+    },
+    {
+        "change_rev": null,
+        "idx": null,
+        "last_err": 150186.66666666666,
+        "last_rev": 32463,
+        "last_value": 44462080.0,
+        "name": "large_exprs.TimeLargeExpressionOperations.peakmem_subs",
+        "pretty_name": "large_exprs.TimeLargeExpressionOperations.peakmem_subs",
+        "prev_value": null
+    },
+    {
+        "change_rev": null,
+        "idx": null,
+        "last_err": 0.002144566666666655,
+        "last_rev": 32463,
+        "last_value": 0.05870479999999993,
+        "name": "large_exprs.TimeLargeExpressionOperations.time_count_ops",
+        "pretty_name": "large_exprs.TimeLargeExpressionOperations.time_count_ops",
+        "prev_value": null
+    },
+    {
+        "change_rev": null,
+        "idx": null,
+        "last_err": 0.3115703333333322,
+        "last_rev": 32463,
+        "last_value": 17.370803000000002,
+        "name": "large_exprs.TimeLargeExpressionOperations.time_cse",
+        "pretty_name": "large_exprs.TimeLargeExpressionOperations.time_cse",
+        "prev_value": null
+    },
+    {
+        "change_rev": null,
+        "idx": null,
+        "last_err": 0.0005817500000000001,
+        "last_rev": 32463,
+        "last_value": 0.013227720000000005,
+        "name": "large_exprs.TimeLargeExpressionOperations.time_free_symbols",
+        "pretty_name": "large_exprs.TimeLargeExpressionOperations.time_free_symbols",
+        "prev_value": null
+    },
+    {
+        "change_rev": null,
+        "idx": null,
+        "last_err": 0.005982999999999332,
+        "last_rev": 32463,
+        "last_value": 0.20614500000000024,
+        "name": "large_exprs.TimeLargeExpressionOperations.time_jacobian_wrt_functions",
+        "pretty_name": "large_exprs.TimeLargeExpressionOperations.time_jacobian_wrt_functions",
+        "prev_value": null
+    },
+    {
+        "change_rev": null,
+        "idx": null,
+        "last_err": 0.0020252999999998225,
+        "last_rev": 32463,
+        "last_value": 0.022600000000000176,
+        "name": "large_exprs.TimeLargeExpressionOperations.time_jacobian_wrt_symbols",
+        "pretty_name": "large_exprs.TimeLargeExpressionOperations.time_jacobian_wrt_symbols",
+        "prev_value": null
+    },
+    {
+        "change_rev": null,
+        "idx": null,
+        "last_err": 0.016291333333333508,
+        "last_rev": 32463,
+        "last_value": 0.22710799999999987,
+        "name": "large_exprs.TimeLargeExpressionOperations.time_manual_jacobian_wrt_functions",
+        "pretty_name": "large_exprs.TimeLargeExpressionOperations.time_manual_jacobian_wrt_functions",
+        "prev_value": null
+    },
+    {
+        "change_rev": null,
+        "idx": null,
+        "last_err": 0.017525333333333098,
+        "last_rev": 32463,
+        "last_value": 0.5715030000000003,
+        "name": "large_exprs.TimeLargeExpressionOperations.time_subs",
+        "pretty_name": "large_exprs.TimeLargeExpressionOperations.time_subs",
+        "prev_value": null
+    },
+    {
+        "change_rev": null,
+        "idx": null,
+        "last_err": 0.05480300000000149,
+        "last_rev": 32463,
+        "last_value": 5.336556000000002,
+        "name": "logic.LogicSuite.time_dpll",
+        "pretty_name": "logic.LogicSuite.time_dpll",
+        "prev_value": null
+    },
+    {
+        "change_rev": null,
+        "idx": null,
+        "last_err": 0.003926333333333254,
+        "last_rev": 32463,
+        "last_value": 0.6701420000000002,
+        "name": "logic.LogicSuite.time_dpll2",
+        "pretty_name": "logic.LogicSuite.time_dpll2",
+        "prev_value": null
+    },
+    {
+        "change_rev": null,
+        "idx": null,
+        "last_err": 0.00010862666666666542,
+        "last_rev": 32463,
+        "last_value": 0.006936590000000003,
+        "name": "logic.LogicSuite.time_load_file",
+        "pretty_name": "logic.LogicSuite.time_load_file",
+        "prev_value": null
+    },
+    {
+        "change_rev": null,
+        "idx": null,
+        "last_err": 7.636000000000043e-05,
+        "last_rev": 32463,
+        "last_value": 0.004614809999999996,
+        "name": "physics.mechanics.kane.KanesMethodMassSpringDamper.time_kanesmethod_mass_spring_damper",
+        "pretty_name": "physics.mechanics.kane.KanesMethodMassSpringDamper.time_kanesmethod_mass_spring_damper",
+        "prev_value": null
+    },
+    {
+        "change_rev": null,
+        "idx": null,
+        "last_err": 0.00010589999999999948,
+        "last_rev": 32463,
+        "last_value": 0.002058039999999999,
+        "name": "physics.mechanics.lagrange.LagrangesMethodMassSpringDamper.time_lagrangesmethod_mass_spring_damper",
+        "pretty_name": "physics.mechanics.lagrange.LagrangesMethodMassSpringDamper.time_lagrangesmethod_mass_spring_damper",
+        "prev_value": null
+    },
+    {
+        "change_rev": null,
+        "idx": 0,
+        "last_err": 3.181333333333307e-07,
+        "last_rev": 32463,
+        "last_value": 3.1112099999999996e-05,
+        "name": "solve.TimeMatrixArithmetic.time_dense_add",
+        "pretty_name": "solve.TimeMatrixArithmetic.time_dense_add(3, 0)",
+        "prev_value": null
+    },
+    {
+        "change_rev": null,
+        "idx": 1,
+        "last_err": 1.9975666666666646e-06,
+        "last_rev": 32463,
+        "last_value": 3.61024e-05,
+        "name": "solve.TimeMatrixArithmetic.time_dense_add",
+        "pretty_name": "solve.TimeMatrixArithmetic.time_dense_add(3, 5)",
+        "prev_value": null
+    },
+    {
+        "change_rev": null,
+        "idx": 2,
+        "last_err": 2.5252666666666744e-06,
+        "last_rev": 32463,
+        "last_value": 4.6148899999999994e-05,
+        "name": "solve.TimeMatrixArithmetic.time_dense_add",
+        "pretty_name": "solve.TimeMatrixArithmetic.time_dense_add(4, 0)",
+        "prev_value": null
+    },
+    {
+        "change_rev": null,
+        "idx": 3,
+        "last_err": 2.3389333333333234e-06,
+        "last_rev": 32463,
+        "last_value": 5.639080000000001e-05,
+        "name": "solve.TimeMatrixArithmetic.time_dense_add",
+        "pretty_name": "solve.TimeMatrixArithmetic.time_dense_add(4, 5)",
+        "prev_value": null
+    },
+    {
+        "change_rev": null,
+        "idx": 4,
+        "last_err": 3.949633333333331e-06,
+        "last_rev": 32463,
+        "last_value": 9.038070000000002e-05,
+        "name": "solve.TimeMatrixArithmetic.time_dense_add",
+        "pretty_name": "solve.TimeMatrixArithmetic.time_dense_add(6, 0)",
+        "prev_value": null
+    },
+    {
+        "change_rev": null,
+        "idx": 5,
+        "last_err": 9.998999999999947e-07,
+        "last_rev": 32463,
+        "last_value": 0.00010246300000000001,
+        "name": "solve.TimeMatrixArithmetic.time_dense_add",
+        "pretty_name": "solve.TimeMatrixArithmetic.time_dense_add(6, 5)",
+        "prev_value": null
+    },
+    {
+        "change_rev": null,
+        "idx": 6,
+        "last_err": 2.333666666666566e-06,
+        "last_rev": 32463,
+        "last_value": 0.0002258849999999999,
+        "name": "solve.TimeMatrixArithmetic.time_dense_add",
+        "pretty_name": "solve.TimeMatrixArithmetic.time_dense_add(10, 0)",
+        "prev_value": null
+    },
+    {
+        "change_rev": null,
+        "idx": 7,
+        "last_err": 1.2563000000000068e-05,
+        "last_rev": 32463,
+        "last_value": 0.0002610650000000001,
+        "name": "solve.TimeMatrixArithmetic.time_dense_add",
+        "pretty_name": "solve.TimeMatrixArithmetic.time_dense_add(10, 5)",
+        "prev_value": null
+    },
+    {
+        "change_rev": null,
+        "idx": 0,
+        "last_err": 5.356100000000015e-06,
+        "last_rev": 32463,
+        "last_value": 0.00013568910000000002,
+        "name": "solve.TimeMatrixArithmetic.time_dense_multiply",
+        "pretty_name": "solve.TimeMatrixArithmetic.time_dense_multiply(3, 0)",
+        "prev_value": null
+    },
+    {
+        "change_rev": null,
+        "idx": 1,
+        "last_err": 6.563066666666638e-06,
+        "last_rev": 32463,
+        "last_value": 0.00019502069999999995,
+        "name": "solve.TimeMatrixArithmetic.time_dense_multiply",
+        "pretty_name": "solve.TimeMatrixArithmetic.time_dense_multiply(3, 5)",
+        "prev_value": null
+    },
+    {
+        "change_rev": null,
+        "idx": 2,
+        "last_err": 9.222333333333259e-06,
+        "last_rev": 32463,
+        "last_value": 0.00028248600000000003,
+        "name": "solve.TimeMatrixArithmetic.time_dense_multiply",
+        "pretty_name": "solve.TimeMatrixArithmetic.time_dense_multiply(4, 0)",
+        "prev_value": null
+    },
+    {
+        "change_rev": null,
+        "idx": 3,
+        "last_err": 1.4823333333332904e-06,
+        "last_rev": 32463,
+        "last_value": 0.000389753,
+        "name": "solve.TimeMatrixArithmetic.time_dense_multiply",
+        "pretty_name": "solve.TimeMatrixArithmetic.time_dense_multiply(4, 5)",
+        "prev_value": null
+    },
+    {
+        "change_rev": null,
+        "idx": 4,
+        "last_err": 1.0936999999999818e-05,
+        "last_rev": 32463,
+        "last_value": 0.0008191659999999999,
+        "name": "solve.TimeMatrixArithmetic.time_dense_multiply",
+        "pretty_name": "solve.TimeMatrixArithmetic.time_dense_multiply(6, 0)",
+        "prev_value": null
+    },
+    {
+        "change_rev": null,
+        "idx": 5,
+        "last_err": 3.2503333333333365e-05,
+        "last_rev": 32463,
+        "last_value": 0.001095145,
+        "name": "solve.TimeMatrixArithmetic.time_dense_multiply",
+        "pretty_name": "solve.TimeMatrixArithmetic.time_dense_multiply(6, 5)",
+        "prev_value": null
+    },
+    {
+        "change_rev": null,
+        "idx": 6,
+        "last_err": 0.00010664333333333361,
+        "last_rev": 32463,
+        "last_value": 0.0033836600000000006,
+        "name": "solve.TimeMatrixArithmetic.time_dense_multiply",
+        "pretty_name": "solve.TimeMatrixArithmetic.time_dense_multiply(10, 0)",
+        "prev_value": null
+    },
+    {
+        "change_rev": null,
+        "idx": 7,
+        "last_err": 9.02200000000011e-05,
+        "last_rev": 32463,
+        "last_value": 0.004062349999999999,
+        "name": "solve.TimeMatrixArithmetic.time_dense_multiply",
+        "pretty_name": "solve.TimeMatrixArithmetic.time_dense_multiply(10, 5)",
+        "prev_value": null
+    },
+    {
+        "change_rev": null,
+        "idx": 0,
+        "last_err": 1.512033333333326e-06,
+        "last_rev": 32463,
+        "last_value": 0.00018870890000000006,
+        "name": "solve.TimeMatrixOperations.time_det",
+        "pretty_name": "solve.TimeMatrixOperations.time_det(3, 0)",
+        "prev_value": null
+    },
+    {
+        "change_rev": null,
+        "idx": 1,
+        "last_err": 1.7090333333333253e-05,
+        "last_rev": 32463,
+        "last_value": 0.00021615300000000004,
+        "name": "solve.TimeMatrixOperations.time_det",
+        "pretty_name": "solve.TimeMatrixOperations.time_det(3, 2)",
+        "prev_value": null
+    },
+    {
+        "change_rev": null,
+        "idx": 2,
+        "last_err": 1.0878333333333347e-05,
+        "last_rev": 32463,
+        "last_value": 0.00024175199999999997,
+        "name": "solve.TimeMatrixOperations.time_det",
+        "pretty_name": "solve.TimeMatrixOperations.time_det(3, 5)",
+        "prev_value": null
+    },
+    {
+        "change_rev": null,
+        "idx": 3,
+        "last_err": 3.254166666666654e-05,
+        "last_rev": 32463,
+        "last_value": 0.001098653,
+        "name": "solve.TimeMatrixOperations.time_det",
+        "pretty_name": "solve.TimeMatrixOperations.time_det(4, 0)",
+        "prev_value": null
+    },
+    {
+        "change_rev": null,
+        "idx": 4,
+        "last_err": 0.003386299999999995,
+        "last_rev": 32463,
+        "last_value": 0.062101,
+        "name": "solve.TimeMatrixOperations.time_det",
+        "pretty_name": "solve.TimeMatrixOperations.time_det(4, 2)",
+        "prev_value": null
+    },
+    {
+        "change_rev": null,
+        "idx": 5,
+        "last_err": 0.0016098666666666632,
+        "last_rev": 32463,
+        "last_value": 0.04267240000000002,
+        "name": "solve.TimeMatrixOperations.time_det",
+        "pretty_name": "solve.TimeMatrixOperations.time_det(4, 5)",
+        "prev_value": null
+    },
+    {
+        "change_rev": null,
+        "idx": 0,
+        "last_err": 1.4059666666666663e-06,
+        "last_rev": 32463,
+        "last_value": 0.0001958995999999999,
+        "name": "solve.TimeMatrixOperations.time_det_bareiss",
+        "pretty_name": "solve.TimeMatrixOperations.time_det_bareiss(3, 0)",
+        "prev_value": null
+    },
+    {
+        "change_rev": null,
+        "idx": 1,
+        "last_err": 8.976666666666672e-06,
+        "last_rev": 32463,
+        "last_value": 0.0002187,
+        "name": "solve.TimeMatrixOperations.time_det_bareiss",
+        "pretty_name": "solve.TimeMatrixOperations.time_det_bareiss(3, 2)",
+        "prev_value": null
+    },
+    {
+        "change_rev": null,
+        "idx": 2,
+        "last_err": 3.130333333333308e-06,
+        "last_rev": 32463,
+        "last_value": 0.00023609599999999985,
+        "name": "solve.TimeMatrixOperations.time_det_bareiss",
+        "pretty_name": "solve.TimeMatrixOperations.time_det_bareiss(3, 5)",
+        "prev_value": null
+    },
+    {
+        "change_rev": null,
+        "idx": 3,
+        "last_err": 8.847999999999958e-06,
+        "last_rev": 32463,
+        "last_value": 0.0011478929999999999,
+        "name": "solve.TimeMatrixOperations.time_det_bareiss",
+        "pretty_name": "solve.TimeMatrixOperations.time_det_bareiss(4, 0)",
+        "prev_value": null
+    },
+    {
+        "change_rev": null,
+        "idx": 4,
+        "last_err": 0.00147659999999999,
+        "last_rev": 32463,
+        "last_value": 0.05881209999999999,
+        "name": "solve.TimeMatrixOperations.time_det_bareiss",
+        "pretty_name": "solve.TimeMatrixOperations.time_det_bareiss(4, 2)",
+        "prev_value": null
+    },
+    {
+        "change_rev": null,
+        "idx": 5,
+        "last_err": 0.002449333333333336,
+        "last_rev": 32463,
+        "last_value": 0.04594990000000001,
+        "name": "solve.TimeMatrixOperations.time_det_bareiss",
+        "pretty_name": "solve.TimeMatrixOperations.time_det_bareiss(4, 5)",
+        "prev_value": null
+    },
+    {
+        "change_rev": null,
+        "idx": 0,
+        "last_err": 7.897e-06,
+        "last_rev": 32463,
+        "last_value": 0.000205125,
+        "name": "solve.TimeMatrixOperations.time_det_berkowitz",
+        "pretty_name": "solve.TimeMatrixOperations.time_det_berkowitz(3, 0)",
+        "prev_value": null
+    },
+    {
+        "change_rev": null,
+        "idx": 1,
+        "last_err": 1.0574666666666698e-05,
+        "last_rev": 32463,
+        "last_value": 0.00023642099999999987,
+        "name": "solve.TimeMatrixOperations.time_det_berkowitz",
+        "pretty_name": "solve.TimeMatrixOperations.time_det_berkowitz(3, 2)",
+        "prev_value": null
+    },
+    {
+        "change_rev": null,
+        "idx": 2,
+        "last_err": 4.430333333333267e-06,
+        "last_rev": 32463,
+        "last_value": 0.00025681900000000004,
+        "name": "solve.TimeMatrixOperations.time_det_berkowitz",
+        "pretty_name": "solve.TimeMatrixOperations.time_det_berkowitz(3, 5)",
+        "prev_value": null
+    },
+    {
+        "change_rev": null,
+        "idx": 3,
+        "last_err": 7.983233333333311e-05,
+        "last_rev": 32463,
+        "last_value": 0.0017511090000000005,
+        "name": "solve.TimeMatrixOperations.time_det_berkowitz",
+        "pretty_name": "solve.TimeMatrixOperations.time_det_berkowitz(4, 0)",
+        "prev_value": null
+    },
+    {
+        "change_rev": null,
+        "idx": 4,
+        "last_err": 3.517733333333297e-05,
+        "last_rev": 32463,
+        "last_value": 0.0020149300000000016,
+        "name": "solve.TimeMatrixOperations.time_det_berkowitz",
+        "pretty_name": "solve.TimeMatrixOperations.time_det_berkowitz(4, 2)",
+        "prev_value": null
+    },
+    {
+        "change_rev": null,
+        "idx": 5,
+        "last_err": 4.983933333333303e-05,
+        "last_rev": 32463,
+        "last_value": 0.0020638800000000014,
+        "name": "solve.TimeMatrixOperations.time_det_berkowitz",
+        "pretty_name": "solve.TimeMatrixOperations.time_det_berkowitz(4, 5)",
+        "prev_value": null
+    },
+    {
+        "change_rev": null,
+        "idx": 0,
+        "last_err": 7.066666666666332e-05,
+        "last_rev": 32463,
+        "last_value": 0.0006730000000000347,
+        "name": "solve.TimeMatrixOperations.time_rank",
+        "pretty_name": "solve.TimeMatrixOperations.time_rank(3, 0)",
+        "prev_value": null
+    },
+    {
+        "change_rev": null,
+        "idx": 1,
+        "last_err": 0.006073333333333375,
+        "last_rev": 32463,
+        "last_value": 0.11842399999999986,
+        "name": "solve.TimeMatrixOperations.time_rank",
+        "pretty_name": "solve.TimeMatrixOperations.time_rank(3, 2)",
+        "prev_value": null
+    },
+    {
+        "change_rev": null,
+        "idx": 2,
+        "last_err": 0.0010503333333333014,
+        "last_rev": 32463,
+        "last_value": 0.050508999999999915,
+        "name": "solve.TimeMatrixOperations.time_rank",
+        "pretty_name": "solve.TimeMatrixOperations.time_rank(3, 5)",
+        "prev_value": null
+    },
+    {
+        "change_rev": null,
+        "idx": 3,
+        "last_err": 3.466666666670134e-05,
+        "last_rev": 32463,
+        "last_value": 0.0009190000000000031,
+        "name": "solve.TimeMatrixOperations.time_rank",
+        "pretty_name": "solve.TimeMatrixOperations.time_rank(4, 0)",
+        "prev_value": null
+    },
+    {
+        "change_rev": null,
+        "idx": 4,
+        "last_err": 0.0029093333333332825,
+        "last_rev": 32463,
+        "last_value": 0.10823000000000005,
+        "name": "solve.TimeMatrixOperations.time_rank",
+        "pretty_name": "solve.TimeMatrixOperations.time_rank(4, 2)",
+        "prev_value": null
+    },
+    {
+        "change_rev": null,
+        "idx": 5,
+        "last_err": 0.0033050000000000024,
+        "last_rev": 32463,
+        "last_value": 0.13439800000000002,
+        "name": "solve.TimeMatrixOperations.time_rank",
+        "pretty_name": "solve.TimeMatrixOperations.time_rank(4, 5)",
+        "prev_value": null
+    },
+    {
+        "change_rev": null,
+        "idx": 0,
+        "last_err": 2.0410000000000254e-06,
+        "last_rev": 32463,
+        "last_value": 0.0002767170000000002,
+        "name": "solve.TimeMatrixOperations.time_rref",
+        "pretty_name": "solve.TimeMatrixOperations.time_rref(3, 0)",
+        "prev_value": null
+    },
+    {
+        "change_rev": null,
+        "idx": 1,
+        "last_err": 0.0006370666666666719,
+        "last_rev": 32463,
+        "last_value": 0.0625138,
+        "name": "solve.TimeMatrixOperations.time_rref",
+        "pretty_name": "solve.TimeMatrixOperations.time_rref(3, 2)",
+        "prev_value": null
+    },
+    {
+        "change_rev": null,
+        "idx": 2,
+        "last_err": 0.0037080000000000077,
+        "last_rev": 32463,
+        "last_value": 0.12325999999999993,
+        "name": "solve.TimeMatrixOperations.time_rref",
+        "pretty_name": "solve.TimeMatrixOperations.time_rref(3, 5)",
+        "prev_value": null
+    },
+    {
+        "change_rev": null,
+        "idx": 3,
+        "last_err": 2.8995000000000047e-05,
+        "last_rev": 32463,
+        "last_value": 0.000562454,
+        "name": "solve.TimeMatrixOperations.time_rref",
+        "pretty_name": "solve.TimeMatrixOperations.time_rref(4, 0)",
+        "prev_value": null
+    },
+    {
+        "change_rev": null,
+        "idx": 4,
+        "last_err": 0.00902233333333339,
+        "last_rev": 32463,
+        "last_value": 0.1658289999999999,
+        "name": "solve.TimeMatrixOperations.time_rref",
+        "pretty_name": "solve.TimeMatrixOperations.time_rref(4, 2)",
+        "prev_value": null
+    },
+    {
+        "change_rev": null,
+        "idx": 5,
+        "last_err": 0.0036980000000000532,
+        "last_rev": 32463,
+        "last_value": 0.20361699999999971,
+        "name": "solve.TimeMatrixOperations.time_rref",
+        "pretty_name": "solve.TimeMatrixOperations.time_rref(4, 5)",
+        "prev_value": null
+    },
+    {
+        "change_rev": null,
+        "idx": 0,
+        "last_err": 0.01953866666666652,
+        "last_rev": 32463,
+        "last_value": 0.8675360000000001,
+        "name": "solve.TimeMatrixSolve.time_solve",
+        "pretty_name": "solve.TimeMatrixSolve.time_solve('GE')",
+        "prev_value": null
+    },
+    {
+        "change_rev": null,
+        "idx": 1,
+        "last_err": 0.028079666666666874,
+        "last_rev": 32463,
+        "last_value": 0.8680029999999999,
+        "name": "solve.TimeMatrixSolve.time_solve",
+        "pretty_name": "solve.TimeMatrixSolve.time_solve('LU')",
+        "prev_value": null
+    },
+    {
+        "change_rev": null,
+        "idx": 2,
+        "last_err": 0.012517999999999993,
+        "last_rev": 32463,
+        "last_value": 0.3937090000000001,
+        "name": "solve.TimeMatrixSolve.time_solve",
+        "pretty_name": "solve.TimeMatrixSolve.time_solve('ADJ')",
+        "prev_value": null
+    },
+    {
+        "change_rev": null,
+        "idx": null,
+        "last_err": 3.2923999999999355e-05,
+        "last_rev": 32463,
+        "last_value": 0.001807667,
+        "name": "solve.TimeMatrixSolve2.time_cholesky_solve",
+        "pretty_name": "solve.TimeMatrixSolve2.time_cholesky_solve",
+        "prev_value": null
+    },
+    {
+        "change_rev": null,
+        "idx": null,
+        "last_err": 2.500000000001575e-05,
+        "last_rev": 32463,
+        "last_value": 0.0008469999999999311,
+        "name": "solve.TimeMatrixSolve2.time_lusolve",
+        "pretty_name": "solve.TimeMatrixSolve2.time_lusolve",
+        "prev_value": null
+    },
+    {
+        "change_rev": null,
+        "idx": null,
+        "last_err": 0.042468999999999944,
+        "last_rev": 32463,
+        "last_value": 0.9993320000000001,
+        "name": "solve.TimeSolve01.time_solve",
+        "pretty_name": "solve.TimeSolve01.time_solve",
+        "prev_value": null
+    },
+    {
+        "change_rev": null,
+        "idx": null,
+        "last_err": 0.0185729999999998,
+        "last_rev": 32463,
+        "last_value": 1.0460570000000002,
+        "name": "solve.TimeSolve01.time_solve_nocheck",
+        "pretty_name": "solve.TimeSolve01.time_solve_nocheck",
+        "prev_value": null
+    },
+    {
+        "change_rev": null,
+        "idx": null,
+        "last_err": 0.0007992333333333157,
+        "last_rev": 32463,
+        "last_value": 0.02811490000000001,
+        "name": "sum.TimeSum.time_doit",
+        "pretty_name": "sum.TimeSum.time_doit",
+        "prev_value": null
+    }
+]
