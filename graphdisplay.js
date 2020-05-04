@@ -21,6 +21,8 @@ $(document).ready(function() {
     var select_reference = false;
     /* The reference value */
     var reference = 1.0;
+    /* Whether to show the legend */
+    var show_legend = true;
     /* Is even commit spacing being used? */
     var even_spacing = false;
     var even_spacing_revisions = [];
@@ -96,7 +98,7 @@ $(document).ready(function() {
     }
 
 
-    function display_benchmark(bm_name, state_selection, sub_benchmark_idx, highlight_revisions) {
+    function display_benchmark(bm_name, state_selection, highlight_revisions) {
         setup_benchmark_graph_display();
 
         $('#graph-display').show();
@@ -112,7 +114,7 @@ $(document).ready(function() {
         current_benchmark = bm_name;
         highlighted_revisions = highlight_revisions;
         $("#title").text(bm_name);
-        setup_benchmark_params(state_selection, sub_benchmark_idx);
+        setup_benchmark_params(state_selection);
         replace_graphs();
     }
 
@@ -123,7 +125,7 @@ $(document).ready(function() {
         benchmark_graph_display_ready = true;
 
         /* When the window resizes, redraw the graphs */
-        $(window).resize(function() {
+        $(window).on('resize', function() {
             update_graphs();
         });
 
@@ -147,9 +149,13 @@ $(document).ready(function() {
         var cursor = [];
         var stack = [tree];
 
-        /* Note: this relies on the fact that the benchmark names are
-           sorted. */
-        $.each($.asv.master_json.benchmarks, function(bm_name, bm) {
+        /* Sort keys for tree construction */
+        var benchmark_keys = Object.keys($.asv.master_json.benchmarks);
+        benchmark_keys.sort();
+
+        /* Build tree */
+        $.each(benchmark_keys, function(i, bm_name) {
+            var bm = $.asv.master_json.benchmarks[bm_name];
             var parts = bm_name.split('.');
             var i = 0;
             var j;
@@ -174,7 +180,7 @@ $(document).ready(function() {
                 stack.push($(top.children()[1]));
                 cursor.push(parts[j]);
 
-                $(top.children()[0]).click(function () {
+                $(top.children()[0]).on('click', function () {
                     $(this).parent().children('ul.tree').toggle(150);
                     var caret = $(this).children('b');
                     if (caret.attr('class') == 'caret') {
@@ -185,7 +191,7 @@ $(document).ready(function() {
                 });
             }
 
-            var name = bm.pretty_name || bm.name || parts[parts.length - 1];
+            var name = bm.pretty_name || parts[parts.length - 1];
             var top = $('<li><a href="#' + bm_name + '">' + name + '</li>');
             stack[stack.length - 1].append(top);
 
@@ -207,7 +213,7 @@ $(document).ready(function() {
             $('#reference').removeClass('active');
             $('#zoom-y-axis').removeClass('active');
             reference = 1.0;
-            update_graphs();
+            update_state_url({'y-axis-scale': log_scale ? ['log']: []});
         });
 
         $('#zoom-y-axis').on('click', function(evt) {
@@ -217,7 +223,7 @@ $(document).ready(function() {
             $('#reference').removeClass('active');
             $('#log-scale').removeClass('active');
             reference = 1.0;
-            update_graphs();
+            update_state_url({'y-axis-scale': zoom_y_axis ? ['zoom'] : []});
         });
 
         $('#reference').on('click', function(evt) {
@@ -227,6 +233,7 @@ $(document).ready(function() {
             $('#log-scale').removeClass('active');
             $('#zoom-y-axis').removeClass('active');
             if (!reference_scale) {
+                reference = 1.0;
                 update_graphs();
             } else {
                 $('#reference').popover({
@@ -243,14 +250,19 @@ $(document).ready(function() {
             even_spacing = !evt.target.classList.contains("active");
             date_scale = false;
             $('#date-scale').removeClass('active');
-            update_graphs();
+            update_state_url({'x-axis-scale': even_spacing ? ['even'] : []});
         });
 
         $('#date-scale').on('click', function(evt) {
             date_scale = !evt.target.classList.contains("active");
             even_spacing = false;
             $('#even-spacing').removeClass('active');
-            update_graphs();
+            update_state_url({'x-axis-scale': date_scale ? ['date'] : []});
+        });
+        
+        $('#show-legend').on('click', function(evt) {
+            show_legend = !show_legend;
+            update_state_url({'show-legend': show_legend ? [] : [false]});
         });
 
         tooltip = $("<div></div>");
@@ -280,16 +292,17 @@ $(document).ready(function() {
         }
 
         var previous_hover = null;
-        $("#main-graph").bind("plothover", function (event, pos, item) {
+        $("#main-graph").on("plothover", function (event, pos, item) {
             if (item) {
                 if (previous_hover != item.datapoint) {
                     previous_hover = item.datapoint;
                     var y = item.datapoint[1];
                     var commit_hash = get_commit_hash(item.datapoint[0]);
                     if (commit_hash) {
+                        var unit = $.asv.master_json.benchmarks[current_benchmark].unit;
                         showTooltip(
                             item.pageX, item.pageY,
-                            $.asv.pretty_second(y) + " @ " + commit_hash);
+                            $.asv.pretty_unit(y, unit) + " @ " + commit_hash);
                     }
                 }
             } else {
@@ -301,7 +314,7 @@ $(document).ready(function() {
            hash in another tab. */
         var previous_click;
         var previous_hash;
-        $("#main-graph").bind("plotclick", function (event, pos, item) {
+        $("#main-graph").on("plotclick", function (event, pos, item) {
             if (item) {
                 if (previous_click != item.datapoint) {
                     previous_click = item.datapoint;
@@ -324,7 +337,7 @@ $(document).ready(function() {
         });
     }
 
-    function setup_benchmark_params(state_selection, sub_benchmark_idx) {
+    function setup_benchmark_params(state_selection) {
         if (!current_benchmark) {
             x_coordinate_axis = 0;
             x_coordinate_is_category = false;
@@ -372,26 +385,39 @@ $(document).ready(function() {
 
         /* Default plot: time series */
         x_coordinate_axis = 0;
-
-        if (sub_benchmark_idx !== null) {
-            /* Only a single parameter set */
-            benchmark_param_selection = $.asv.param_selection_from_flat_idx(params, sub_benchmark_idx);
+        if (state_selection['x-axis'] !== undefined &&
+                state_selection['x-axis'] != "commit") {
+            for (var k = 0; k < params.length; ++k) {
+                if (state_selection['x-axis'] == param_names[k]) {
+                    x_coordinate_axis = k + 1;
+                    break;
+                }
+            }
         }
-        else {
-            /* Default plot: up to 8 lines */
-            benchmark_param_selection = [[null]];
-            if (params.length >= 1) {
-                var count = 1;
-                var max_curves = 8;
 
-                for (var k = 0; k < params.length; ++k) {
-                    var item = [];
-                    for (var j = 0; j < params[k].length && (j+1)*count <= max_curves; ++j) {
+        /* Default plot: up to 8 lines */
+        benchmark_param_selection = [[null]];
+        if (params.length >= 1) {
+            var count = 1;
+            var max_curves = 8;
+
+            for (var k = 0; k < params.length; ++k) {
+                var param_name = param_names[k]
+                var param_values = params[k]
+                var item = [];
+                if (state_selection['p-'+param_name] !== undefined) {
+                    for (var j = 0; j < param_values.length; ++j) {
+                        if (state_selection['p-'+param_name].includes(param_values[j])) {
+                            item.push(j);
+                        }
+                    }
+                } else {
+                    for (var j = 0; j < param_values.length && (j+1)*count <= max_curves; ++j) {
                         item.push(j);
                     }
-                    count = count * item.length;
-                    benchmark_param_selection.push(item);
                 }
+                count = count * item.length;
+                benchmark_param_selection.push(item);
             }
         }
 
@@ -400,7 +426,7 @@ $(document).ready(function() {
         replace_benchmark_params_ui();
     }
 
-    function update_state_url() {
+    function update_state_url(params) {
         var info = $.asv.parse_hash_string(window.location.hash);
         $.each($.asv.master_json.params, function(param, values) {
             if (values.length > 1) {
@@ -411,6 +437,9 @@ $(document).ready(function() {
                     delete info.params[param];
                 }
             }
+        });
+        $.each(params || {}, function(key, value) {
+            info.params[key] = value;
         });
         window.location.hash = $.asv.format_hash_string(info);
     }
@@ -527,11 +556,7 @@ $(document).ready(function() {
                 button.on('click', function (evt) {
                     $(evt.target).siblings().removeClass('active');
                     x_coordinate_axis = axis;
-
-                    check_x_coordinate_axis();
-                    replace_benchmark_params_ui();
-                    replace_graphs();
-                    update_graphs();
+                    update_state_url({'x-axis': [text]});
                 });
             });
         }
@@ -616,8 +641,11 @@ $(document).ready(function() {
                         }
                     }
                     benchmark_param_selection[param_idx+1] = new_selection;
-                    replace_graphs();
-                    update_graphs();
+                    var new_selection_params = {};
+                    new_selection_params['p-'+param_names[param_idx]] = new_selection.map(function(k) {
+                        return params[param_idx][k];
+                    });
+                    update_state_url(new_selection_params);
                 });
             });
         });
@@ -794,6 +822,7 @@ $(document).ready(function() {
         /* Before loading graphs, remove any that are currently
            active. */
         graphs = [];
+        orig_graphs = [];
 
         var to_load = collect_graphs(current_benchmark, state, benchmark_param_selection);
         var failures = 0;
@@ -815,14 +844,14 @@ $(document).ready(function() {
                                                      x_coordinate_axis,
                                                      graph_content[0],
                                                      $.asv.master_json.benchmarks[current_benchmark].params);
-                    graphs.push({
+                    orig_graphs.push({
                         data: series,
                         label: graph_content[1],
                         bars: { order: count, },
                     });
                     count += 1;
                 });
-                orig_graphs = graphs;
+                graphs = orig_graphs;
                 update_graphs();
             }).fail(function () {
                 failures += 1;
@@ -904,6 +933,16 @@ $(document).ready(function() {
             if (min == max) {
                 --min;
             }
+            else if (reference_scale) {
+                // Don't allow the reference level to be at graph top/bottom,
+                // as this can look strange.
+                if (min == 0) {
+                    --min;
+                }
+                if (max == 0) {
+                    ++max;
+                }
+            }
 
             var ticks = [];
             for (var x = min; x <= max; ++x) {
@@ -931,28 +970,49 @@ $(document).ready(function() {
             options.yaxis.min = Math.pow(10, min) * reference;
             options.yaxis.max = Math.pow(10, max) * reference;
 
-        } else if ($.asv.master_json.benchmarks[current_benchmark].unit === 'seconds') {
+            if (!reference_scale) {
+                options.yaxis.axisLabel = $.asv.master_json.benchmarks[current_benchmark].unit;
+            }
+        }
+        else {
+            var unit = $.asv.master_json.benchmarks[current_benchmark].unit;
+            var unit_list = null;
 
-            if (!zoom_y_axis) {
-                options.yaxis.min = 0.0;
-                options.yaxis.max = max * 1.3;
+            if (unit == "seconds") {
+                unit_list = $.asv.time_units;
+            }
+            else if (unit == "bytes") {
+                unit_list = $.asv.mem_units;
             }
 
-            var unit_name = null;
-            var multiplier = null;
-            for (var i = 0; i < $.asv.time_units.length - 1; ++i) {
-                if (min < $.asv.time_units[i+1][2]) {
-                    unit_name = $.asv.time_units[i][1];
-                    multiplier = $.asv.time_units[i][2];
-                    break;
+            if (unit_list !== null) {
+                if (!zoom_y_axis) {
+                    options.yaxis.min = 0.0;
+                    options.yaxis.max = max * 1.3;
                 }
+
+                var unit_name = null;
+                var multiplier = null;
+                for (var i = 0; i < unit_list.length - 1; ++i) {
+                    if (min < unit_list[i+1][2]) {
+                        unit_name = unit_list[i][1];
+                        multiplier = unit_list[i][2];
+                        break;
+                    }
+                }
+            }
+            else {
+                if (unit && unit != "unit") {
+                    unit_name = unit;
+                }
+                multiplier = 1.0;
             }
 
             if (unit_name) {
                 options.yaxis.axisLabel = unit_name;
                 options.yaxis.tickFormatter = function (v, axis) {
                     return (v / multiplier).toPrecision(3);
-                };
+                }
             }
         }
     }
@@ -1029,6 +1089,17 @@ $(document).ready(function() {
                         align: "center"
                     }
                 };
+
+                // deep copy graphs and html-escape x-labels
+                graphs = $.extend(true, [], orig_graphs);
+                $.each(graphs, function(i, graph) {
+                    $.each(graph.data, function(j, point) {
+                        point[0] = $("<span>").text('' + point[0]).html();
+                    });
+                });
+            }
+            else {
+                graphs = orig_graphs;
             }
             var param_names = $.asv.master_json.benchmarks[current_benchmark].param_names;
             options.xaxis.axisLabel = param_names[x_coordinate_axis-1];
@@ -1043,31 +1114,34 @@ $(document).ready(function() {
         }
 
         var markings = [];
-        $.each($.asv.master_json.tags, function(tag, revision) {
-            var x = get_x_from_revision(revision);
-            markings.push(
-                { color: "#ddd", lineWidth: 1, xaxis: { from: x, to: x } }
-            );
-        });
 
-        if (highlighted_revisions) {
-            $.each(highlighted_revisions, function(i, revs) {
-                var x_values = [];
-                $.each(revs, function(i, rev) {
-                    var x = get_x_from_revision(rev);
-                    markings.push(
-                        { color: '#d00', lineWidth: 2, xaxis: { from: x, to: x } }
-                    );
-                    x_values.push(x);
-                });
-                if (revs.length > 1) {
-                    markings.push(
-                        { color: "rgba(200, 0, 0, 0.2)", alpha: 0.5, lineWidth: 2, 
-                          xaxis: { from: Math.min.apply(null, x_values),
-                                   to: Math.max.apply(null, x_values) }}
-                    );
-                }
+        if (x_coordinate_axis == 0) {
+            $.each($.asv.master_json.tags, function(tag, revision) {
+                var x = get_x_from_revision(revision);
+                markings.push(
+                    { color: "#ddd", lineWidth: 1, xaxis: { from: x, to: x } }
+                );
             });
+
+            if (highlighted_revisions) {
+                $.each(highlighted_revisions, function(i, revs) {
+                    var x_values = [];
+                    $.each(revs, function(i, rev) {
+                        var x = get_x_from_revision(rev);
+                        markings.push(
+                            { color: '#d00', lineWidth: 2, xaxis: { from: x, to: x } }
+                        );
+                        x_values.push(x);
+                    });
+                    if (revs.length > 1) {
+                        markings.push(
+                            { color: "rgba(200, 0, 0, 0.2)", alpha: 0.5, lineWidth: 2, 
+                              xaxis: { from: Math.min.apply(null, x_values),
+                                       to: Math.max.apply(null, x_values) }}
+                        );
+                    }
+                });
+            }
         }
 
         var unit;
@@ -1111,7 +1185,12 @@ $(document).ready(function() {
                 mode: "x"
             },
             legend: {
-                position: "nw"
+                show: show_legend,
+                position: "nw",
+                labelFormatter: function(label, series) {
+                    // Ensure HTML escaping
+                    return $("<span>").text(label).html();
+                }
             }
         };
 
@@ -1162,8 +1241,8 @@ $(document).ready(function() {
             overview = $.plot(overview_div, graphs, overview_options);
         }
 
-        graph_div.unbind("plotselected");
-        graph_div.bind("plotselected", function (event, ranges) {
+        graph_div.off("plotselected");
+        graph_div.on("plotselected", function (event, ranges) {
             // do the zooming
             var new_options = $.extend(true, {}, options, {
                 xaxis: {
@@ -1186,8 +1265,8 @@ $(document).ready(function() {
             }
         });
 
-        overview_div.unbind("plotselected");
-        overview_div.bind("plotselected", function (event, ranges) {
+        overview_div.off("plotselected");
+        overview_div.on("plotselected", function (event, ranges) {
             plot.setSelection(ranges);
             // Update things that depend on the range
             update_tags();
@@ -1245,6 +1324,11 @@ $(document).ready(function() {
         }
 
         function update_tags() {
+            if (x_coordinate_axis != 0) {
+                /* Only applies when x-axis is the time axis */
+                return;
+            }
+
             /* Add the tags as vertical grid lines */
             var canvas = plot.getCanvas();
             var xmin = plot.getAxes().xaxis.min;
@@ -1270,14 +1354,8 @@ $(document).ready(function() {
 
     $.asv.register_page('graphdisplay', function(params) {
         var benchmark = params['benchmark'];
-        var sub_benchmark_idx = null;
         var highlight_revisions = null;
         var state_selection = null;
-
-        if (params['idx']) {
-            sub_benchmark_idx = parseInt(params['idx'][0]);
-            delete params['idx'];
-        }
 
         if (params['commits']) {
             highlight_revisions = [];
@@ -1293,10 +1371,48 @@ $(document).ready(function() {
             delete params['commits'];
         }
 
+        if (params['y-axis-scale']) {
+            if (params['y-axis-scale'][0] === 'log') {
+                $('#log-scale').addClass('active');
+                log_scale = true;
+            } else if (params['y-axis-scale'][0] === 'zoom') {
+                $('#zoom-y-axis').addClass('active');
+                zoom_y_axis = true;
+            }
+            delete params['y-axis-scale'];
+        }
+
+        if (params['x-axis-scale']) {
+            if (params['x-axis-scale'][0] === 'even') {
+                $('#even-spacing').addClass('active');
+                even_spacing = true;
+            } else if (params['x-axis-scale'][0] === 'date') {
+                $('#date-scale').addClass('active');
+                date_scale = true;
+            }
+            delete params['x-axis-scale'];
+        }
+    
+        var show_legend_button = $('#show-legend')
+        if (params['show-legend']) {
+            if (params['show-legend'][0] === 'false') {
+                show_legend = false;
+                show_legend_button.removeClass('active');
+            }
+            else {
+                show_legend_button.addClass('active');
+                show_legend = true;
+            }
+            delete params['show-legend'];
+        }
+        else {
+            show_legend_button.addClass('active');
+        }
+
         if (Object.keys(params).length > 0) {
             state_selection = params;
         }
 
-        display_benchmark(benchmark, state_selection, sub_benchmark_idx, highlight_revisions);
+        display_benchmark(benchmark, state_selection, highlight_revisions);
     });
 });
