@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from sympy import symbols, Integral, exp, log, Add
+from sympy.integrals.meijerint import meijerint_definite, meijerint_indefinite
 
 def _make_integral_01():
     # Scaled down version of an integration by parts example
@@ -22,11 +23,18 @@ class TimeIntegration01:
     def _set_ref(self):
         u0, k, l, t = self.params
         self.ref = {
-            'time_doit_meijerg': -k*u0/(k-l)*(exp(t*(l-k)) - 1)
+            'time_meijerint_definite': -k*u0/(k-l)*(exp(t*(l-k)) - 1),
         }
 
     def teardown(self):
+        f, (t, _, _) = self.integral.function, self.integral.limits[0]
         for key, val in self.values.items():
+            if key == 'time_meijerint_indefinite':
+                # An antiderivative is only determined up to a constant
+                if (val.diff(t) - f).simplify() != 0:
+                    raise ValueError("Incorrect antiderivative, invalid"
+                                     " timing: %s" % val)
+                continue
             try:
                 ref = self.ref[key]
             except KeyError:
@@ -39,8 +47,14 @@ class TimeIntegration01:
     def time_doit(self):
         self.values['time_doit'] = self.integral.doit()
 
-    def time_doit_meijerg(self):
-        self.values['time_doit_meijerg'] = self.integral.doit(meijerg=True)
+    def time_meijerint_definite(self):
+        f, (t, a, b) = self.integral.function, self.integral.limits[0]
+        # The convergence condition is not checked
+        self.values['time_meijerint_definite'] = meijerint_definite(f, t, a, b)[0]
+
+    def time_meijerint_indefinite(self):
+        f, (t, _, _) = self.integral.function, self.integral.limits[0]
+        self.values['time_meijerint_indefinite'] = meijerint_indefinite(f, t)
 
 
 class _TimeIntegrationRisch(object):
